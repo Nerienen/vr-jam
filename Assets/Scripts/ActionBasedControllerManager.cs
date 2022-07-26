@@ -9,6 +9,7 @@ using UnityEngine.Serialization;
 /// <summary>
 /// Use this class to map input actions to each controller state (mode)
 /// and set up the transitions between controller states (modes).
+/// TEST EDIT!
 /// </summary>
 [AddComponentMenu("XR/Action Based Controller Manager")]
 [DefaultExecutionOrder(kControllerManagerUpdateOrder)]
