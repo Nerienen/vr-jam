@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8135137751952529083}
   - component: {fileID: 8135137751952529082}
   - component: {fileID: 8135137751952528965}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 8135137752197443880}
   - component: {fileID: 8135137752197443892}
   - component: {fileID: 8135137752197443895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Brick
   m_TagString: Untagged
   m_Icon: {fileID: 0}

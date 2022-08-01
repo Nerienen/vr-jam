@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4559772788104226003}
   - component: {fileID: 4559772788104226028}
   - component: {fileID: 4559772788104226029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 4559772788532412645}
   - component: {fileID: 4559772788532412646}
   - component: {fileID: 4559772788532412647}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4559772788576400843}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GrabPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -325,6 +325,10 @@ PrefabInstance:
     - target: {fileID: 4542885652319939915, guid: bdac9fe623128d24fbce2bdf87b8eae8, type: 3}
       propertyPath: m_Name
       value: CraftingSocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 4542885652319939915, guid: bdac9fe623128d24fbce2bdf87b8eae8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4542885652319939916, guid: bdac9fe623128d24fbce2bdf87b8eae8, type: 3}
       propertyPath: m_RootOrder
