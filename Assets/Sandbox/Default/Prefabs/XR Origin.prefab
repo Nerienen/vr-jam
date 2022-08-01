@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Camera: {fileID: 1122351102577380195}
   m_OriginBaseGameObject: {fileID: 1122351102193996472}
   m_CameraFloorOffsetObject: {fileID: 1122351103135995196}
-  m_RequestedTrackingOriginMode: 0
+  m_RequestedTrackingOriginMode: 2
   m_CameraYOffset: 1.1176
 --- !u!114 &1122351102193996483
 MonoBehaviour:
@@ -1672,8 +1672,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122351103135995196}
-  m_LocalRotation: {x: 0, y: 0.29395685, z: 0, w: 0.9558187}
-  m_LocalPosition: {x: 0, y: 1.36144, z: -1.438}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1682,7 +1682,7 @@ Transform:
   - {fileID: 1122351103374092004}
   m_Father: {fileID: 1122351102193996485}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 34.19, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1122351103166858531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,7 +2544,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_SelectActionTrigger: 0
-  m_HideControllerOnSelect: 0
+  m_HideControllerOnSelect: 1
   m_AllowHoveredActivate: 0
   m_PlayAudioClipOnSelectEntered: 0
   m_AudioClipForOnSelectEntered: {fileID: 0}
@@ -3386,7 +3386,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_SelectActionTrigger: 0
-  m_HideControllerOnSelect: 0
+  m_HideControllerOnSelect: 1
   m_AllowHoveredActivate: 0
   m_PlayAudioClipOnSelectEntered: 0
   m_AudioClipForOnSelectEntered: {fileID: 0}
