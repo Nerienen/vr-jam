@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3186701195770914095}
   - component: {fileID: 3186701195770914094}
   - component: {fileID: 7317158680308153929}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bubblegum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 3186701195770914089}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 3186701195962806839}
   - component: {fileID: 3186701195962806838}
   - component: {fileID: 3186701195962806833}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
