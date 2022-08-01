@@ -6,32 +6,29 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class WeaponController : MonoBehaviour
 {
-    private XRSocketInteractor _craftingSocket;
 
-    private void Start()
+    public void OnAttach(SelectEnterEventArgs obj)
     {
-        // get a reference to the craftingsocket. Currently only works with one socket on the object. 
-        _craftingSocket = transform.root.GetComponentInChildren<XRSocketInteractor>();
-        if (!_craftingSocket) Debug.LogWarning(name + " has no Socket Interactor assigned!");        
-    }
+        // Reference the Socket and the grabbable that was attached
+        var _craftingSocket = obj.interactorObject;
+        GameObject attachedObject = obj.interactableObject.transform.gameObject;
 
-    public void OnAttach()
-    {
-        // get a reference to the gameobject that got attached into the socket
-        GameObject attachedObject = _craftingSocket.GetOldestInteractableSelected().transform.gameObject;
 
-        // check if the referencing was succesfull 
-        if (attachedObject)
+        // Check if the referencing was succesfull 
+        if (attachedObject != null)
         {
-            // deactivate the crafting socket
-            _craftingSocket.gameObject.SetActive(false);
+            // Deactivate the crafting socket
+            _craftingSocket.transform.gameObject.SetActive(false);
 
-            // attach the socketed object to this gameobject and get rid of the individual parts like the rigidbody or the XRGrabInteractable of the attached object.
+            // Attach the socketed object to this gameobject and get rid of the individual parts like the rigidbody or the XRGrabInteractable of the attached object.
+            Destroy(attachedObject.GetComponent<XRGrabInteractable>());
+            Destroy(attachedObject.GetComponent<Rigidbody>());
             attachedObject.transform.parent = this.transform;
             attachedObject.transform.position = _craftingSocket.transform.position;
             attachedObject.transform.rotation = _craftingSocket.transform.rotation;
-            Destroy(attachedObject.GetComponent<XRGrabInteractable>());
-            Destroy(attachedObject.GetComponent<Rigidbody>());
+
+            // Destroy the crafting socket after use
+            //Destroy(_craftingSocket.transform.gameObject);
         }
         else Debug.LogWarning(name+": null reference while trying to attach an object!");
     }
