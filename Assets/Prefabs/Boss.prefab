@@ -40,9 +40,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8774104578281465181}
-  - component: {fileID: 8774104578281465178}
+  - component: {fileID: 2311961849941570814}
   - component: {fileID: 8774104578281465180}
   - component: {fileID: 8774104578281465183}
+  - component: {fileID: 8774104578281465178}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -67,28 +68,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &8774104578281465178
-NavMeshAgent:
+--- !u!114 &2311961849941570814
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8774104578281465179}
   m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be2bd144f22d4fc897670bb26d975930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
 --- !u!114 &8774104578281465180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,6 +103,7 @@ MonoBehaviour:
   eyesTransform: {fileID: 8774104576896631376}
   dontCheckEveryFrame: 1
   checkPlayerPositionDelayInSeconds: 0.05
+  alwaysDrawVisionCone: 1
 --- !u!114 &8774104578281465183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,7 +118,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossSpeed: 2
   bossHeight: 1.8
-  bossRadius: 0.5
+  bossGirth: 0.5
+  searchTimeInSeconds: 5
+  wanderRadius: 8
+  wanderIntervalInSeconds: 5
+  randomPatrolChance: 0.3
+--- !u!195 &8774104578281465178
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8774104578281465179}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &8774104578378252448
 GameObject:
   m_ObjectHideFlags: 0
