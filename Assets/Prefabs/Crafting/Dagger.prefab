@@ -161,10 +161,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 1
-  _damageForm: 2
+  _damageForm: 3
   DamagingCollider: {fileID: 4579164111445594954}
   ColliderRigidbody: {fileID: 0}
-  _minForce: 0.01
   _lastDamageForce: 0
   CraftingSocketMat: {fileID: 2100000, guid: b571bdad68dec464787b2153d6ede9e1, type: 2}
 --- !u!114 &4579164111471359032

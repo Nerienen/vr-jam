@@ -4,13 +4,12 @@ using UnityEngine;
 using UnityEngine.Events;
 
 // Enum to consider damage types and weaknesses
-public enum DamageForm { NoType, Blunt, Slash }
+public enum DamageForm { NoType, Blunt, Slash, PlayerDamage }
 
 namespace VRJammies.Framework.Core.Health
 {
     public class Damageable : MonoBehaviour
     {
-        [SerializeField]
         private int _currentHealth = 0;
         [SerializeField]
         private int _startingHealth = 1;
@@ -47,19 +46,27 @@ namespace VRJammies.Framework.Core.Health
 
         private bool destroyed = false;
 
-        private HealthController _healthController;
-
-
-
 
         private void Start()
         {
             _currentHealth = _startingHealth;
-
-            _healthController = transform.root.GetComponentInChildren<HealthController>();
-            if (!_healthController) Debug.LogWarning(name+" found no Health Controller on this root object");
         }
 
+        public void DealDamage(int damageAmount, DamageForm damageType, DamageCollider damageDealer)
+        {
+
+            if (destroyed)
+            {
+                return;
+            }
+
+            DamageCalculation(damageAmount, damageType, damageDealer);
+
+            if (_currentHealth <= 0)
+            {
+                DestroyThis();
+            }
+        }
         public void DealDamage(int damageAmount, DamageForm damageType)
         {
 
@@ -68,7 +75,7 @@ namespace VRJammies.Framework.Core.Health
                 return;
             }
 
-            DamageCalculation(damageAmount, damageType);
+            DamageCalculation(damageAmount, damageType, null);
 
             if (_currentHealth <= 0)
             {
@@ -93,7 +100,7 @@ namespace VRJammies.Framework.Core.Health
 
         }
 
-        private void DamageCalculation(int damageAmount, DamageForm damageType)
+        private void DamageCalculation(int damageAmount, DamageForm damageType, DamageCollider damageDealer)
         {
             // Value to calculate the actual amount of damage to take
             int damageTaken;
@@ -113,6 +120,9 @@ namespace VRJammies.Framework.Core.Health
 
             // Substract the damage taken value from the current health
             _currentHealth -= damageTaken;
+
+            if (damageTaken > 0 && damageDealer.ShouldDestroy())
+                damageDealer.OnDestroyThis();
         }
 
         public void SetDestroyOnDeath(bool destroyOnDeath)

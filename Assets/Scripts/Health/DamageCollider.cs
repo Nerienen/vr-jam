@@ -12,7 +12,7 @@ namespace VRJammies.Framework.Core.Health
 
         // What type of damage to apply. 
         [SerializeField]
-        private DamageForm _damageForm;
+        protected DamageForm _damageForm;
 
         // Used to define the collider which can deal damage
         public Collider DamagingCollider;
@@ -21,7 +21,7 @@ namespace VRJammies.Framework.Core.Health
         public Rigidbody ColliderRigidbody;
 
         // Minimum Amount of force necessary to do damage. Expressed as relativeVelocity.magnitude
-        private float _minForce = 0f;
+        protected float _minForce = 0.05f;
 
         // Our previous frame's last relative velocity value
         //private float _lastRelativeVelocity = 0;
@@ -29,12 +29,15 @@ namespace VRJammies.Framework.Core.Health
         // How much impulse force was applied last onCollision enter
         public float _lastDamageForce = 0;
 
-        private GameObject CraftingSocketGO;
+        // Destroy this object after dealing damage
+        protected bool _destroyOnDamaging = true;
+
+        protected GameObject CraftingSocketGO;
         [SerializeField]
-        private Material CraftingSocketMat;
+        protected Material CraftingSocketMat;
 
 
-        private void Start() 
+        protected virtual void Start() 
         {
             // Initiliaze values and null checks
 
@@ -56,7 +59,7 @@ namespace VRJammies.Framework.Core.Health
         }
 
         // Call the custom public collision event in case this object can have collision events
-        private void OnCollisionEnter(Collision collision) 
+        protected virtual void OnCollisionEnter(Collision collision) 
         {
             if (!this.isActiveAndEnabled) {
                 return;
@@ -75,13 +78,12 @@ namespace VRJammies.Framework.Core.Health
                 Damageable d = collision.collider.gameObject.GetComponent<Damageable>();
                 if (d && collision.GetContact(0).thisCollider == DamagingCollider) {
 
-                    d.DealDamage(Damage, _damageForm);
-                    OnDestroyThis();
+                    d.DealDamage(Damage, _damageForm, this);
                 }
             }
         }
 
-        private void OnDestroyThis()
+        public void OnDestroyThis()
         {
             ReactivateCraftingSocket();
             Destroy(this.gameObject);
@@ -92,7 +94,7 @@ namespace VRJammies.Framework.Core.Health
             CraftingSocketGO = craftingSocket;
         }
 
-        private void ReactivateCraftingSocket()
+        protected void ReactivateCraftingSocket()
         {
             if (CraftingSocketGO)
             {
@@ -105,6 +107,11 @@ namespace VRJammies.Framework.Core.Health
             {
                 CraftingSocketGO.GetComponent<MeshRenderer>().material = CraftingSocketMat;
             }
+        }
+
+        public bool ShouldDestroy() 
+        {
+            return _destroyOnDamaging;
         }
     }
 }
