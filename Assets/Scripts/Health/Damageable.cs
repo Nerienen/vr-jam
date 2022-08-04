@@ -10,6 +10,7 @@ namespace VRJammies.Framework.Core.Health
 {
     public class Damageable : MonoBehaviour
     {
+        [SerializeField]
         private int _currentHealth = 0;
         [SerializeField]
         private int _startingHealth = 1;
