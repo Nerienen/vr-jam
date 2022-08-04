@@ -21,7 +21,7 @@ namespace VRJammies.Framework.Core.Health
         public Rigidbody ColliderRigidbody;
 
         // Minimum Amount of force necessary to do damage. Expressed as relativeVelocity.magnitude
-        protected float _minForce = 0.05f;
+        protected float _minForce = 0f;
 
         // Our previous frame's last relative velocity value
         //private float _lastRelativeVelocity = 0;

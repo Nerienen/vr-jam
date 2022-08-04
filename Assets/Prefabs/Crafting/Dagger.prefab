@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 1
-  _damageForm: 3
+  _damageForm: 2
   DamagingCollider: {fileID: 4579164111445594954}
   ColliderRigidbody: {fileID: 0}
   _lastDamageForce: 0
