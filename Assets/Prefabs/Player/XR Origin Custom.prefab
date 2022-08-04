@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6401763129718225303}
   m_Layer: 0
   m_Name: LeftBaseController
-  m_TagString: Untagged
+  m_TagString: LeftHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -292,7 +292,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.09
-  m_Center: {x: 0, y: 0, z: 0.09}
+  m_Center: {x: 0, y: 0, z: 0.04}
 --- !u!114 &6401763129718225303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6401763130002497050
 Transform:
   m_ObjectHideFlags: 0
@@ -1145,7 +1145,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.09
-  m_Center: {x: 0, y: 0, z: 0.09}
+  m_Center: {x: 0, y: 0, z: 0.04}
 --- !u!1 &6401763130544840518
 GameObject:
   m_ObjectHideFlags: 0
@@ -2647,7 +2647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6401763131562052575
 Transform:
   m_ObjectHideFlags: 0
@@ -3456,6 +3456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c6de38f13d6b1443b2c5a5a20ac08d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentHealth: 0
   _startingHealth: 100
   _weakness: 3
   DestroyOnDeath: 0

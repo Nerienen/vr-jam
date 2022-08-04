@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - LeftHandUIAttach
+  - LeftHand
   layers:
   - Default
   - TransparentFX

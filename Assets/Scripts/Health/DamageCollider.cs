@@ -75,7 +75,7 @@ namespace VRJammies.Framework.Core.Health
 
             if (_lastDamageForce >= _minForce) {
                 // Can we damage what we hit?
-                Damageable d = collision.collider.gameObject.GetComponent<Damageable>();
+                Damageable d = collision.collider.transform.root.GetComponentInChildren<Damageable>();
                 if (d && collision.GetContact(0).thisCollider == DamagingCollider) {
 
                     d.DealDamage(Damage, _damageForm, this);
