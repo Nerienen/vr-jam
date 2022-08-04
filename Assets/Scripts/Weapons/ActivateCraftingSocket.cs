@@ -16,7 +16,7 @@ namespace VRJammies.Framework.Core.Crafting
                 // Set the socket active, color it the material of this adhesive and destroy this object. 
                 _socket.socketActive = true;
                 _socket.GetComponent<MeshRenderer>().material = GetComponentInChildren<MeshRenderer>().material;
-                Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
             }
         }
     }

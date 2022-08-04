@@ -58,7 +58,6 @@ namespace VRJammies.Framework.Core.Boss
 
         private void SpawnProjectile()
         {
-            // If you have less waterdroplets then you should maximally have, spawn a new one
             if (_projectileList.Count < _maxProjectiles)
             {
                 var projectile = Instantiate(_projectilePrefab, _output.position, _output.rotation);
@@ -67,7 +66,6 @@ namespace VRJammies.Framework.Core.Boss
             }
             else
             {
-                // If you have your max droplets spawned, cycle through the list and reset an inactive one
                 foreach (var projectile in _projectileList)
                 {
                     if (!projectile.activeSelf)
