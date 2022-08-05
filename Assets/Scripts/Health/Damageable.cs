@@ -15,6 +15,8 @@ namespace VRJammies.Framework.Core.Health
         [SerializeField]
         private int _startingHealth = 1;
 
+        private HealthController healthController;
+
         /// <summary>
         /// Advanced damage calculations including weaknesses and resistances. 
         /// </summary>
@@ -50,6 +52,8 @@ namespace VRJammies.Framework.Core.Health
 
         private void Start()
         {
+            healthController = transform.root.GetComponentInChildren<HealthController>();
+            //if (!healthController) Debug.LogWarning(this+" found no health controller on this object!");
             _currentHealth = _startingHealth;
         }
 
@@ -135,6 +139,7 @@ namespace VRJammies.Framework.Core.Health
         {
             _currentHealth = 0;
             destroyed = true;
+            if(healthController) healthController.DealDamage(1);
 
             // Invoke Callback Event
             if (onDestroyed != null)
