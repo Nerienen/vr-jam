@@ -10,11 +10,12 @@ namespace VRJammies.Framework.Core.Health
     {
         [SerializeField]
         private GameObject _projectileSpawner;
+        [SerializeField]
+        private string _layerToIgnore;
 
         protected override void Start()
         {
             // Initiliaze values and null checks
-            _damageForm = DamageForm.PlayerDamage;
             _minForce = 0f;
             _destroyOnDamaging = false;
 
@@ -29,9 +30,9 @@ namespace VRJammies.Framework.Core.Health
         }
 
         // Call the custom public collision event in case this object can have collision events
-        protected override void OnCollisionEnter(Collision collision) 
+        protected override void OnCollisionEnter(Collision collision)
         {
-            if (!this.isActiveAndEnabled || collision.gameObject.layer == LayerMask.NameToLayer("Enemy")) 
+            if (!this.isActiveAndEnabled || collision.gameObject.layer == LayerMask.NameToLayer(_layerToIgnore))
             {
 
                 return;
@@ -43,6 +44,13 @@ namespace VRJammies.Framework.Core.Health
 
         public void DeactivateThis()
         {
+            if (!_projectileSpawner)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+
+
             this.transform.parent = _projectileSpawner.transform;
             this.transform.position = _projectileSpawner.transform.position;
             this.transform.rotation = _projectileSpawner.transform.rotation;
