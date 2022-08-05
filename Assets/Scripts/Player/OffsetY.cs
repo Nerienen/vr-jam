@@ -28,4 +28,10 @@ public class OffsetY : MonoBehaviour
         Vector3 headWorldSpace = head.TransformPoint(Vector3.zero);
         transform.position = new Vector3(transform.parent.position.x, headWorldSpace.y + _yOffSet, transform.parent.position.z);
     }
+
+    // Method can be used to set a new Y Offset to the object. 
+    public void SetOffsetY(float OffsetY) 
+    {
+        _yOffSet = OffsetY;
+    }
 }
