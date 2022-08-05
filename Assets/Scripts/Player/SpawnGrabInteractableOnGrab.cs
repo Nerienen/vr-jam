@@ -13,10 +13,14 @@ public class SpawnGrabInteractableOnGrab : MonoBehaviour
     private XRInteractionManager InteractionManager;
 
     // List with references to spawned projectiles, used to only spawn another projectile if needed
+    [SerializeField]
     private List<GameObject> _projectileList = new List<GameObject>();
 
     private void Start()
     {
+        var go = SpawnProjectile();
+        go.SetActive(false);
+
         InteractionManager = FindObjectOfType<XRInteractionManager>();
         if (!InteractionManager) Debug.LogWarning(this + " didn't find an Interaction Manager!");
         if (!GrabInteractablePrefab) Debug.LogWarning(this + " has no prefab to spawn assigned!");
@@ -24,25 +28,25 @@ public class SpawnGrabInteractableOnGrab : MonoBehaviour
 
     public void OnGrab(SelectEnterEventArgs args)
     {
-        // If there is no projectile in the list, spawn one
-        if (_projectileList.Count == 0)
+        bool didSpawn = false;
+
+        // Check the projectile list for inactive projectiles
+        foreach (var projectile in _projectileList)
         {
-            AttachProjectile(SpawnProjectile(), args);
-        }
-        else
-        {
-            // Check the projectile list for inactive projectiles
-            foreach (var projectile in _projectileList)
+            if (!projectile.activeSelf)
             {
-                if (!projectile.activeSelf)
-                {
-                    AttachProjectile(projectile, args);
-                    break;
-                }
-                else
-                    AttachProjectile(SpawnProjectile(), args);
+                // If you found an inactive object, use that and tick of didSpawn as true
+                projectile.transform.position = this.transform.position;
+                projectile.SetActive(true);
+                AttachProjectile(projectile, args);
+                didSpawn = true;
+                break;
             }
         }
+
+        // If after the loop there was no inactive object, spawn a new one
+        if (!didSpawn)
+            AttachProjectile(SpawnProjectile(), args);
     }
 
     private GameObject SpawnProjectile()
