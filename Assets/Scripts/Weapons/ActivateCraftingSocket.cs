@@ -7,16 +7,22 @@ namespace VRJammies.Framework.Core.Crafting
 {    public class ActivateCraftingSocket : MonoBehaviour
     {
         [SerializeField]
-        float _despawnTimer = 5f;
+        float _despawnTimer = 3f;
+        [SerializeField]
         float _timer;
+        Vector3 LastPosition;
 
         private void Update()
         {
-            if (transform.position == transform.position)
+            var currentPosition = transform.position;
+
+            if (currentPosition == LastPosition)
             {
                 _timer += Time.deltaTime;
             }
             else _timer = 0;
+
+            LastPosition = currentPosition;
 
             if (_timer > _despawnTimer || transform.position.y < -5)
                 gameObject.SetActive(false);

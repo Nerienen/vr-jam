@@ -19,23 +19,8 @@ namespace VRJammies.Framework.Core.Health
         [Tooltip("Destroy this object on Death? False if need to respawn.")]
         public bool DestroyOnDeath = false;
 
-        /// <summary>
-        /// If true the object will be reactivated according to RespawnTime
-        /// </summary>
-        [Tooltip("If true the object will be reactivated according to RespawnTime")]
-        public bool Respawn = false;
-
-        /// <summary>
-        /// If Respawn true, this gameObject will reactivate after RespawnTime. In seconds.
-        /// </summary>
-        [Tooltip("If Respawn true, this gameObject will reactivate after RespawnTime. In seconds.")]
-        public float RespawnTime = 3f;
-
         [Tooltip("Optional Event to be called once health is <= 0")]
         public UnityEvent onDestroyed;
-
-        [Tooltip("Optional Event to be called once the object has been respawned, if Respawn is true and after RespawnTime")]
-        public UnityEvent onRespawn;
 
         private bool destroyed = false;
 
@@ -85,24 +70,6 @@ namespace VRJammies.Framework.Core.Health
             if (DestroyOnDeath)
             {
                 Destroy(this.gameObject);
-            }
-            else if (Respawn)
-            {
-                StartCoroutine(RespawnRoutine(RespawnTime));
-            }
-        }
-        
-        private IEnumerator RespawnRoutine(float seconds)
-        {
-            yield return new WaitForSeconds(seconds);
-
-            _currentHealth = _startingHealth;
-            destroyed = false;
-
-            // Call Respawn Event
-            if (onRespawn != null)
-            {
-                onRespawn.Invoke();
             }
         }
     }
