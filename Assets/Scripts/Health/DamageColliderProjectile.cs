@@ -31,16 +31,14 @@ namespace VRJammies.Framework.Core.Health
         // Call the custom public collision event in case this object can have collision events
         protected override void OnCollisionEnter(Collision collision) 
         {
-            if (!this.isActiveAndEnabled) {
+            if (!this.isActiveAndEnabled || collision.gameObject.layer == LayerMask.NameToLayer("Enemy")) 
+            {
 
                 return;
             }
 
             OnCollisionEvent(collision);
-            if (collision.gameObject.layer != LayerMask.NameToLayer("Enemy"))
-            {
-                DeactivateThis();
-            }
+            DeactivateThis();
         }
 
         public void DeactivateThis()
