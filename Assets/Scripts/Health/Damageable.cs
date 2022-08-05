@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 // Enum to consider damage types and weaknesses
-public enum DamageForm { NoType, Blunt, Slash, PlayerDamage }
+public enum DamageForm { NoType, Blunt, Slash, PlayerDamage, Acid, Water }
 
 namespace VRJammies.Framework.Core.Health
 {

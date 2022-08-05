@@ -18,8 +18,6 @@ namespace VRJammies.Framework.Core.Boss
         [SerializeField]
         private float _force = 10;
         [SerializeField]
-        private int _maxProjectiles = 10;
-        [SerializeField]
         private bool _isActive = false;
 
 
@@ -58,6 +56,31 @@ namespace VRJammies.Framework.Core.Boss
 
         private void SpawnProjectile()
         {
+            bool didSpawn = false;
+
+            // Check the projectile list for inactive projectiles
+            foreach (var projectile in _projectileList)
+            {
+                if (!projectile.activeSelf)
+                {
+                    // If you found an inactive object, use that and tick of didSpawn as true
+                    projectile.transform.position = this.transform.position;
+                    projectile.SetActive(true);
+                    ShootProjectile(projectile);
+                    didSpawn = true;
+                    break;
+                }
+            }
+
+            // If after the loop there was no inactive object, spawn a new one
+            if (!didSpawn)
+            {
+                var projectile = Instantiate(_projectilePrefab, _output.position, _output.rotation);
+                _projectileList.Add(projectile);
+                ShootProjectile(projectile);
+            }
+
+            /*
             if (_projectileList.Count < _maxProjectiles)
             {
                 var projectile = Instantiate(_projectilePrefab, _output.position, _output.rotation);
@@ -75,7 +98,7 @@ namespace VRJammies.Framework.Core.Boss
                     }
                 }
             }
-
+            */
         }
 
         private void ShootProjectile(GameObject projectile)

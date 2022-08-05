@@ -7,7 +7,7 @@ using VRJammies.Framework.Core.Health;
 
 namespace VRJammies.Framework.Core.Crafting 
 { 
-public class WeaponController : MonoBehaviour
+public class CraftedWeaponController : MonoBehaviour
 {
         private List<DamageCollider> _damageColliders = new List<DamageCollider>();
 
