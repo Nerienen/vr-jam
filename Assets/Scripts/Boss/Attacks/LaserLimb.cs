@@ -1,8 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using VRJammies.Framework.Core.Boss;
 
-public class LaserLimb : MonoBehaviour
+public class LaserLimb : AttackBase
 {
     [SerializeField] float turnSpeed = 5f;
     [SerializeField] LineRenderer indicatorRenderer;
@@ -13,7 +13,7 @@ public class LaserLimb : MonoBehaviour
     public Transform indicatorPoint;
     public Transform firePoint;
 
-    private bool indicating = true;
+    private bool indicating = false;
     private bool hasShot = false;
 
     private RaycastHit hitInfo;
@@ -57,8 +57,6 @@ public class LaserLimb : MonoBehaviour
                 StartCoroutine(PrepShot());
                 hasShot = true;
             }
-
-            
         }
         else
         {
@@ -77,6 +75,16 @@ public class LaserLimb : MonoBehaviour
 
         indicating = false;
         hasShot = false;
+        OnDoneAttacking();
     }
-    
+
+    public override bool CanAttack()
+    {
+        return !hasShot;
+    }
+
+    public override void Attack()
+    {
+        indicating = true;
+    }
 }

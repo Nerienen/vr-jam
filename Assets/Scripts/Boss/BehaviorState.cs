@@ -1,4 +1,4 @@
-﻿namespace Boss
+﻿namespace VRJammies.Framework.Core.Boss
 {
     public enum BehaviorState
     {

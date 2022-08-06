@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using VRJammies.Framework.Core.Health;
 
 namespace VRJammies.Framework.Core.Boss
 {
-    public class ProjectileSpitter : MonoBehaviour
+    public class ProjectileSpitter : AttackBase
     {
         [SerializeField]
         private GameObject _target;
@@ -24,6 +23,7 @@ namespace VRJammies.Framework.Core.Boss
         [SerializeField]
         private float _attackSpeed = 0.125f;
         private float _timer = 0f;
+        private bool canAttack;
 
 
         private void Start()
@@ -42,16 +42,10 @@ namespace VRJammies.Framework.Core.Boss
                 _timer += Time.deltaTime;
                 if (_timer >= _attackSpeed)
                 {
-                    SpawnProjectile();
-                    _timer = 0;
+                    canAttack = true;
                 }
             }
             else _timer = 0;
-        }
-
-        private void LookAtTarget(GameObject target) 
-        {
-            LookAtTarget(target);
         }
 
         private void SpawnProjectile()
@@ -113,6 +107,18 @@ namespace VRJammies.Framework.Core.Boss
             projectile.SetActive(true);
             rb.velocity = transform.forward * _force;
             projectile.transform.parent = null;            
+            OnDoneAttacking();
+        }
+
+        public override bool CanAttack()
+        {
+            return canAttack;
+        }
+
+        public override void Attack()
+        {
+            SpawnProjectile();
+            _timer = 0;
         }
     }
 }

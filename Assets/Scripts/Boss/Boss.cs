@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Boss
+namespace VRJammies.Framework.Core.Boss
 {
     public class Boss : MonoBehaviour
     {

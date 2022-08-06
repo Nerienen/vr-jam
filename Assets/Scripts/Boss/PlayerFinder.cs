@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 #endif
 
-namespace Boss
+namespace VRJammies.Framework.Core.Boss
 {
     public class PlayerFinder : MonoBehaviour
     {

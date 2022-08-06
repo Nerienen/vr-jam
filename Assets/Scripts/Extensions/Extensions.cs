@@ -10,7 +10,7 @@ namespace Extensions
             return
                 list.Count == 0 ?
                 default :
-                list[Mathf.RoundToInt(Random.value * list.Count - 1)];
+                list[Mathf.RoundToInt(Random.value * (list.Count - 1))];
         }
     }
 }
