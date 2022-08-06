@@ -3657,6 +3657,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6401763131585759392}
   - component: {fileID: 6401763131585759399}
+  - component: {fileID: 6636875643972833073}
+  - component: {fileID: 424517531141095325}
+  - component: {fileID: 2966401694042482326}
   - component: {fileID: 6401763131585759398}
   - component: {fileID: 6401763131585759397}
   - component: {fileID: 6401763131585759396}
@@ -3667,7 +3670,6 @@ GameObject:
   - component: {fileID: 6401763131585759455}
   - component: {fileID: 6401763131585759454}
   - component: {fileID: 6401763131585759393}
-  - component: {fileID: 2966401694042482326}
   m_Layer: 3
   m_Name: XR Origin Custom
   m_TagString: Untagged
@@ -3708,6 +3710,82 @@ MonoBehaviour:
   m_CameraFloorOffsetObject: {fileID: 6401763130915311449}
   m_RequestedTrackingOriginMode: 2
   m_CameraYOffset: 1.1176
+--- !u!114 &6636875643972833073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6401763131585759453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9916931ba2cdc7b45bc9067b45419374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &424517531141095325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6401763131585759453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54222d7d3d9180b45af3d3935d06c87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerRespawnTransform: {fileID: 0}
+  _bossRespawnTransform: {fileID: 0}
+  _playerMoveScript: {fileID: 0}
+  _boss: {fileID: 0}
+--- !u!114 &2966401694042482326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6401763131585759453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c6de38f13d6b1443b2c5a5a20ac08d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentHealth: 0
+  _startingHealth: 3
+  _weakness: 3
+  DestroyOnDeath: 0
+  Respawn: 1
+  RespawnTime: 3
+  onDestroyed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 424517531141095325}
+        m_TargetAssemblyTypeName: PlayerRespawn, Assembly-CSharp
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRespawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 424517531141095325}
+        m_TargetAssemblyTypeName: PlayerRespawn, Assembly-CSharp
+        m_MethodName: OnRespawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6401763131585759398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3945,30 +4023,6 @@ MonoBehaviour:
   m_HeadForwardSource: {fileID: 6401763131473957178}
   m_LeftHandForwardSource: {fileID: 6401763130896282056}
   m_RightHandForwardSource: {fileID: 6401763130610252929}
---- !u!114 &2966401694042482326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6401763131585759453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c6de38f13d6b1443b2c5a5a20ac08d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _currentHealth: 0
-  _startingHealth: 100
-  _weakness: 3
-  DestroyOnDeath: 0
-  Respawn: 1
-  RespawnTime: 3
-  onDestroyed:
-    m_PersistentCalls:
-      m_Calls: []
-  onRespawn:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &267955939
 PrefabInstance:
   m_ObjectHideFlags: 0
