@@ -14,9 +14,19 @@ public class HolsterSocketController : MonoBehaviour
     public void OnAttach(SelectEnterEventArgs args) 
     {
         args.interactableObject.transform.root.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+
+        if (args.interactableObject.transform.root.GetComponentInChildren<DestroyOnStandStill>()) 
+        {
+            args.interactableObject.transform.root.GetComponentInChildren<DestroyOnStandStill>().enabled = false;
+        }
     }
     public void OnDetach(SelectExitEventArgs args)
     {
         args.interactableObject.transform.root.localScale = new Vector3(1f, 1f, 1f);
+
+        if (args.interactableObject.transform.root.GetComponentInChildren<DestroyOnStandStill>())
+        {
+            args.interactableObject.transform.root.GetComponentInChildren<DestroyOnStandStill>().enabled = true;
+        }
     }
 }

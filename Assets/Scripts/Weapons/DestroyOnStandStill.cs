@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyOnStandStill : MonoBehaviour
 {
     [SerializeField]
-    float _despawnTimer = 3f;
+    float _despawnTimer = 15f;
     float _timer;
     [SerializeField]
     bool onlyInactive = true;
@@ -23,11 +23,18 @@ public class DestroyOnStandStill : MonoBehaviour
 
         LastPosition = currentPosition;
 
-        if (_timer > _despawnTimer || transform.position.y < -5 && !onlyInactive)
-            Destroy(this.gameObject);
+        if (!onlyInactive) 
+        {
+            if (_timer > _despawnTimer || transform.position.y < -5)
+                Destroy(this.gameObject);
+        }
 
-        if (_timer > _despawnTimer || transform.position.y < -5 && onlyInactive)
-            gameObject.SetActive(false);
+        if (onlyInactive)
+        {
+            if (_timer > _despawnTimer || transform.position.y < -5)
+                gameObject.SetActive(false);
+
+        }
     }
 
     private void OnEnable()

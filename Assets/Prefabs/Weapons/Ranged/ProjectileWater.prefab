@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _despawnTimer: 3
-  onlyInactive: 0
+  onlyInactive: 1
 --- !u!114 &1396573676976624014
 MonoBehaviour:
   m_ObjectHideFlags: 0
