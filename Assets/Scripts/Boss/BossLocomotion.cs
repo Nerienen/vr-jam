@@ -28,12 +28,6 @@ namespace VRJammies.Framework.Core.Boss
 
         private void Awake()
         {
-            agent = GetComponent<NavMeshAgent>();
-            if (agent == null)
-            {
-                Debug.LogError($"Cannot find NavMeshAgent");
-            }
-
             playerFinder = GetComponent<PlayerFinder>();
             if (playerFinder == null)
             {
@@ -54,6 +48,11 @@ namespace VRJammies.Framework.Core.Boss
         }
 
         private void Start()
+        {
+            SetUpAgent();
+        }
+
+        private void OnValidate()
         {
             SetUpAgent();
         }
@@ -86,6 +85,13 @@ namespace VRJammies.Framework.Core.Boss
         [ContextMenu("Set up agent")]
         private void SetUpAgent()
         {
+            agent = GetComponent<NavMeshAgent>();
+            if (agent == null)
+            {
+                Debug.LogError($"Cannot find NavMeshAgent");
+                return;
+            }
+            
             agent.speed = bossSpeed;
             agent.height = bossHeight;
             agent.radius = bossGirth;
@@ -95,6 +101,12 @@ namespace VRJammies.Framework.Core.Boss
 
         private void MoveToTarget()
         {
+            if ((agent.destination - transform.position).magnitude <= minDistanceToPlayer)
+            {
+                agent.isStopped = true;
+                return;
+            }
+            agent.isStopped = false;
             transform.position = agent.nextPosition;
             // See here to couple locomotion with animation:
             // https://docs.unity3d.com/Manual/nav-CouplingAnimationAndNavigation.html
