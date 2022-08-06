@@ -4,7 +4,7 @@
 using UnityEditor;
 #endif
 
-namespace Boss
+namespace VRJammies.Framework.Core.Boss
 {
     public class PatrolPoint : MonoBehaviour
     {

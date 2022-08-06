@@ -4,7 +4,7 @@ using Extensions;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Boss
+namespace VRJammies.Framework.Core.Boss
 {
     public class BossLocomotion : MonoBehaviour
     {
@@ -12,6 +12,7 @@ namespace Boss
         [SerializeField] private float bossSpeed;
         [SerializeField] private float bossHeight;
         [SerializeField] private float bossGirth;
+        [SerializeField] private float minDistanceToPlayer;
         [SerializeField] private float searchTimeInSeconds;
         [SerializeField] private float wanderRadius;
         [SerializeField] private float wanderIntervalInSeconds;
@@ -64,14 +65,18 @@ namespace Boss
                 // No locomotion in these states
                 case BehaviorState.Attacking:
                 case BehaviorState.Stunned:
+                    agent.isStopped = true;
                     break;
                 case BehaviorState.PlayerLost:
+                    agent.isStopped = false;
                     SearchForPlayer();
                     break;
                 case BehaviorState.PlayerFound:
+                    agent.isStopped = false;
                     MoveToTarget();
                     break;
                 case BehaviorState.Idle:
+                    agent.isStopped = false;
                     TryToWander();
                     MoveToTarget();
                     break;
@@ -84,6 +89,7 @@ namespace Boss
             agent.speed = bossSpeed;
             agent.height = bossHeight;
             agent.radius = bossGirth;
+            agent.stoppingDistance = minDistanceToPlayer;
             agent.updatePosition = false;  // We're moving the agent manually
         }
 
