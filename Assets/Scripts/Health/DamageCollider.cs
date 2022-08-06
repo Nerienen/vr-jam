@@ -95,6 +95,11 @@ namespace VRJammies.Framework.Core.Health
             CraftingSocketGO = craftingSocket;
         }
 
+        public void SetDamageType(DamageForm damageForm) 
+        {
+            _damageForm = damageForm;
+        }
+
         protected void ReactivateCraftingSocket()
         {
             if (CraftingSocketGO)

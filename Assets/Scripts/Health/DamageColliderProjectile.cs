@@ -27,6 +27,12 @@ namespace VRJammies.Framework.Core.Health
             }
             if (!_projectileSpawner) Debug.LogWarning(this+" has no projectile spawner assigned!");
 
+            Destroy(this.gameObject, 10f);
+
+        }
+        public void SetLayerToIgnore(string layerName)
+        {
+            _layerToIgnore = layerName;
         }
 
         // Call the custom public collision event in case this object can have collision events
