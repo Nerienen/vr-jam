@@ -2251,11 +2251,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4379269981460273036, guid: b2c1efcf15a23104f80feeb91f15b624, type: 3}
-      propertyPath: _target
-      value: 
-      objectReference: {fileID: 1260223565}
-    - target: {fileID: 5623177303883703648, guid: b2c1efcf15a23104f80feeb91f15b624, type: 3}
+    - target: {fileID: 3946708759447838480, guid: b2c1efcf15a23104f80feeb91f15b624, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1260223570}
@@ -2263,10 +2259,6 @@ PrefabInstance:
       propertyPath: _target
       value: 
       objectReference: {fileID: 1260223565}
-    - target: {fileID: 8774104578281465178, guid: b2c1efcf15a23104f80feeb91f15b624, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 8774104578281465179, guid: b2c1efcf15a23104f80feeb91f15b624, type: 3}
       propertyPath: m_Name
       value: Boss

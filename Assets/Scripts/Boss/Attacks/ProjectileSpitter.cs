@@ -19,6 +19,8 @@ namespace VRJammies.Framework.Core.Boss
         [SerializeField]
         private bool _isActive = false;
 
+        [SerializeField] private PlayerFinder playerFinder;
+
 
         [SerializeField]
         private float _attackSpeed = 0.125f;
@@ -30,7 +32,16 @@ namespace VRJammies.Framework.Core.Boss
         {
             if (!_projectilePrefab) Debug.LogWarning(this.name + " has no projectile prefab assigned!");
             if(!_output) Debug.LogWarning(this.name + " has no projectile output assigned!");
-
+            if (!playerFinder)
+            {
+                Debug.LogWarning(this.name + " has no player finder assigned!");
+            }
+            else
+            {
+                playerFinder.OnPlayerFound += OnPlayerFound;
+                playerFinder.OnPlayerLost += OnPlayerLost;
+            }
+            
         }
 
         private void Update()
@@ -105,7 +116,8 @@ namespace VRJammies.Framework.Core.Boss
             projectile.transform.rotation = _output.rotation;
             projectile.GetComponent<DamageColliderProjectile>().SetSpawner(this.gameObject);
             projectile.SetActive(true);
-            rb.velocity = transform.forward * _force;
+            var direction = (_target.transform.position - _output.transform.position).normalized;
+            rb.velocity = direction * _force;
             projectile.transform.parent = null;            
             OnDoneAttacking();
         }
@@ -119,6 +131,16 @@ namespace VRJammies.Framework.Core.Boss
         {
             SpawnProjectile();
             _timer = 0;
+        }
+
+        private void OnPlayerFound(Player.Player player)
+        {
+            _target = player.gameObject;
+        }
+
+        private void OnPlayerLost(Player.Player player)
+        {
+            _target = null;
         }
     }
 }

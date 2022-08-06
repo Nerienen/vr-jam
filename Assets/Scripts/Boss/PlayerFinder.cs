@@ -32,9 +32,9 @@ namespace VRJammies.Framework.Core.Boss
         private Player.Player player;
         private bool hasFoundPlayer;
 
-        public event Action<Vector3> OnPlayerFound;
-        public event Action<Vector3> OnPlayerKnownPosition;
-        public event Action<Vector3> OnPlayerLost;
+        public event Action<Player.Player> OnPlayerFound;
+        public event Action<Player.Player> OnPlayerKnownPosition;
+        public event Action<Player.Player> OnPlayerLost;
 
         private void Awake()
         {
@@ -87,14 +87,13 @@ namespace VRJammies.Framework.Core.Boss
             
             if (foundPlayer)
             {
-                lastKnownPlayerPosition = playerPos;
                 if (!hasFoundPlayer)
                 {
-                    OnPlayerFound?.Invoke(lastKnownPlayerPosition);
+                    OnPlayerFound?.Invoke(player);
                 }
                 else
                 {
-                    OnPlayerKnownPosition?.Invoke(lastKnownPlayerPosition);
+                    OnPlayerKnownPosition?.Invoke(player);
                 }
                 
                 hasFoundPlayer = true;
@@ -103,7 +102,7 @@ namespace VRJammies.Framework.Core.Boss
             
             if (!foundPlayer && hasFoundPlayer && Time.time - lastFoundTime > secondsUntilLost)
             {
-                OnPlayerLost?.Invoke(lastKnownPlayerPosition);
+                OnPlayerLost?.Invoke(player);
                 hasFoundPlayer = false;
             }
         }
