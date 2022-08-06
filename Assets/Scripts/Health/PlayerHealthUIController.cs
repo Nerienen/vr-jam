@@ -12,11 +12,10 @@ namespace VRJammies.Framework.Core.Health
 
         private Damageable _playerDamageable;
         private Player.Player _player;
-        private int _activeHeartCount;
         private WaitForSeconds _waitForSeconds;
 
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             //to cache for performance
             _waitForSeconds = new WaitForSeconds(heartDestroyDelayTime);
@@ -30,12 +29,20 @@ namespace VRJammies.Framework.Core.Health
             {
                 _playerDamageable = _player.GetComponent<Damageable>();
             }
+        }
 
+        private void Start()
+        {
             //TODO - instantiate new hearts based on existing hearts on damegable
+
+            for (int i = 0; i < displayHearts.Count; i++)
+            {
+                displayHearts[i].SetActive(true);
+            }
         }
 
         // Update is called once per frame
-        public void UpdateHealthUI()
+        public void UpdateHealthUI(bool isDamage = true)
         {
             //TODO - potentially add value consideration (if value = 1 of damage, then do, otherwise not enough health to lose heart)
             for(int i = 0; i < displayHearts.Count; i++)
@@ -43,7 +50,11 @@ namespace VRJammies.Framework.Core.Health
                 if (displayHearts[i].activeSelf)
                 {
                     //gravity and fall
-                    displayHearts[i].GetComponent<Rigidbody>().useGravity = true;
+                    //TODO- cache these in start for optimization (here for speed of development)
+                    //TODO- if we want some cool effect, will drop them and delayed disable, for now just deactivate
+                    //displayHearts[i].GetComponent<BoxCollider>().enabled = true;
+                    //displayHearts[i].GetComponent<Rigidbody>().useGravity = true;
+                    displayHearts[i].SetActive(false);
 
                     StartCoroutine(DelayedDeactivation(displayHearts[i]));
 
@@ -55,7 +66,9 @@ namespace VRJammies.Framework.Core.Health
                     return;
                 }
             }
-            
+
+            //TODO - do inverse if isDamage = false (for soda's etc)
+            //isDamage == false
 
             //depreciated
             /*
