@@ -47,6 +47,9 @@ namespace VRJammies.Framework.Core.Health
         [Tooltip("Optional Event to be called once the object has been respawned, if Respawn is true and after RespawnTime")]
         public UnityEvent onRespawn;
 
+        [Tooltip("Subbed to by PlayerHealthUIController to update Player UI")]
+        public UnityEvent onPlayerDamaged;
+
         private bool destroyed = false;
 
 
@@ -121,6 +124,14 @@ namespace VRJammies.Framework.Core.Health
             if (_weakness == DamageForm.NoType)
             {
                 damageTaken = damageAmount;
+            }
+            //to send info to PlayerHealthUIController
+            else if(_weakness == DamageForm.PlayerDamage)
+            {
+                if(onPlayerDamaged != null)
+                {
+                    onPlayerDamaged.Invoke();
+                }
             }
 
             // Substract the damage taken value from the current health
