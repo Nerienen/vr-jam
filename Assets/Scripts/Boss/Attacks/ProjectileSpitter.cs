@@ -22,6 +22,8 @@ namespace VRJammies.Framework.Core.Boss
         [SerializeField] private PlayerFinder playerFinder;
 
 
+        private bool _shouldPool = false;
+
         [SerializeField]
         private float _attackSpeed = 0.125f;
         private float _timer = 0f;
@@ -61,49 +63,37 @@ namespace VRJammies.Framework.Core.Boss
 
         private void SpawnProjectile()
         {
-            bool didSpawn = false;
+            if (_shouldPool)
+            {
+                bool didSpawn = false;
 
-            // Check the projectile list for inactive projectiles
-            foreach (var projectile in _projectileList)
-            {
-                if (!projectile.activeSelf)
-                {
-                    // If you found an inactive object, use that and tick of didSpawn as true
-                    projectile.transform.position = this.transform.position;
-                    projectile.SetActive(true);
-                    ShootProjectile(projectile);
-                    didSpawn = true;
-                    break;
-                }
-            }
-
-            // If after the loop there was no inactive object, spawn a new one
-            if (!didSpawn)
-            {
-                var projectile = Instantiate(_projectilePrefab, _output.position, _output.rotation);
-                _projectileList.Add(projectile);
-                ShootProjectile(projectile);
-            }
-
-            /*
-            if (_projectileList.Count < _maxProjectiles)
-            {
-                var projectile = Instantiate(_projectilePrefab, _output.position, _output.rotation);
-                _projectileList.Add(projectile);
-                ShootProjectile(projectile);
-            }
-            else
-            {
+                // Check the projectile list for inactive projectiles
                 foreach (var projectile in _projectileList)
                 {
                     if (!projectile.activeSelf)
                     {
+                        // If you found an inactive object, use that and tick of didSpawn as true
+                        projectile.transform.position = this.transform.position;
+                        projectile.SetActive(true);
                         ShootProjectile(projectile);
+                        didSpawn = true;
                         break;
                     }
                 }
+
+                // If after the loop there was no inactive object, spawn a new one
+                if (!didSpawn)
+                {
+                    var projectile = Instantiate(_projectilePrefab, _output.position, _output.rotation);
+                    _projectileList.Add(projectile);
+                    ShootProjectile(projectile);
+                }
             }
-            */
+            else
+            {
+                var projectile = Instantiate(_projectilePrefab, _output.position, _output.rotation);
+                ShootProjectile(projectile);
+            }
         }
 
         private void ShootProjectile(GameObject projectile)
