@@ -30,6 +30,7 @@ namespace VRJammies.Framework.Core.Health
         public float _lastDamageForce = 0;
 
         // Destroy this object after dealing damage
+        [SerializeField]
         protected bool _destroyOnDamaging = true;
 
         protected GameObject CraftingSocketGO;

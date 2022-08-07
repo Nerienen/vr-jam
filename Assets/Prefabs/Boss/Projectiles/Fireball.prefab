@@ -9875,6 +9875,7 @@ MonoBehaviour:
   DamagingCollider: {fileID: 2324668574953617845}
   ColliderRigidbody: {fileID: 0}
   _lastDamageForce: 0
+  _destroyOnDamaging: 0
   CraftingSocketMat: {fileID: 0}
   _projectileSpawner: {fileID: 0}
   _layerToIgnore: Enemy
