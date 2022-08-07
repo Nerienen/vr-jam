@@ -105,8 +105,8 @@ public class LaserLimb : AttackBase
     }
 
     private void OnPlayerFound(Player.Player player)
-    {        
-        //target = player.transform;
+    {     
+        target = player.transform;
         foundPlayer = true;
     }
 
