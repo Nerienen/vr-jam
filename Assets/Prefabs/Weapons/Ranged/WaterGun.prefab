@@ -875,7 +875,7 @@ GameObject:
   - component: {fileID: 6208637063461653856}
   - component: {fileID: 6553005440783321364}
   m_Layer: 6
-  m_Name: Gun
+  m_Name: WaterGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
