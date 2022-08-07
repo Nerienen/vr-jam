@@ -50,7 +50,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!114 &7560596327841831926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,6 +82,7 @@ MonoBehaviour:
   DamagingCollider: {fileID: 4313668713138803993}
   ColliderRigidbody: {fileID: 4313668712659599879}
   _lastDamageForce: 0
+  _destroyOnDamaging: 1
   CraftingSocketMat: {fileID: 0}
   _projectileSpawner: {fileID: 0}
   _layerToIgnore: Grabbables
