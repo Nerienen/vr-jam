@@ -8,15 +8,24 @@ namespace VRJammies.Framework.Core.Health
     public class PlayerHealthUIController : MonoBehaviour
     {
         public float heartDestroyDelayTime = 3.0f;
-        public List<GameObject> displayHearts;
+        public GameObject originalHeart;
+        public GameObject deathFlash; //TODO - for blinking on and off for death effect, last blink on to pure black (with potential text to restart)
+
+        [SerializeField]
+        private List<GameObject> displayHearts;
+        private List<Transform> originalHeartPositions;
 
         private Damageable _playerDamageable;
         private Player.Player _player;
         private WaitForSeconds _waitForSeconds;
 
+        private int gameOverHeartCount;
+
         // Start is called before the first frame update
         void Awake()
         {
+            originalHeartPositions = new List<Transform>();
+
             //to cache for performance
             _waitForSeconds = new WaitForSeconds(heartDestroyDelayTime);
 
@@ -33,10 +42,23 @@ namespace VRJammies.Framework.Core.Health
 
         private void Start()
         {
-            //TODO - instantiate new hearts based on existing hearts on damegable
+            int heartCount = _playerDamageable.GetStartingHealth();
+            Renderer heartRend = originalHeart.GetComponent<Renderer>();
+            float heartWidth = heartRend.bounds.size.x;
+
+            //instantiate new hearts based on existing hearts on dameagable
+            for (int i = 0; i < heartCount; i++)
+            {
+                GameObject heart = Instantiate(originalHeart, this.transform);
+                heart.transform.position = new Vector3(heart.transform.position.x + (heartWidth * i), heart.transform.position.y, heart.transform.position.z);
+                displayHearts.Add(heart);
+            }
+
+            gameOverHeartCount = displayHearts.Count - 1;
 
             for (int i = 0; i < displayHearts.Count; i++)
             {
+                originalHeartPositions.Add(displayHearts[i].transform);
                 displayHearts[i].SetActive(true);
             }
         }
@@ -50,32 +72,34 @@ namespace VRJammies.Framework.Core.Health
             {
                 if (displayHearts[i].activeSelf)
                 {
-                    //gravity and fall
-                    //TODO- cache these in start for optimization (here for speed of development)
-                    //TODO- if we want some cool effect, will drop them and delayed disable, for now just deactivate
-                    //displayHearts[i].GetComponent<BoxCollider>().enabled = true;
-                    //displayHearts[i].GetComponent<Rigidbody>().useGravity = true;
-                    displayHearts[i].SetActive(false);
-
                     //optional solution: Mathf.Sign(heartMod) == 1
 
                     if (heartMod > 0)
                     {
                         heartMod--;
-                        displayHearts[i].SetActive(false);
+                        //TODO- can deactivate, if we dont want some cool effect, will drop them and delayed disable
+                        //TODO- cache these in start for optimization (here for speed of development)
+                        displayHearts[i].transform.parent = null;
+                        displayHearts[i].GetComponent<BoxCollider>().enabled = true;
+                        displayHearts[i].GetComponent<Rigidbody>().useGravity = true;
+
+                        if (i == gameOverHeartCount)
+                        {
+                            //TODO - potential deathFlash
+                            //TODO - if gets here instead of return, all hearts deactivated, game over / restart button activation
+                        }
                     }
                     else if (heartMod < 0)
                     {
                         heartMod++;
+                        displayHearts[i].transform.parent = this.transform;
+                        displayHearts[i].GetComponent<BoxCollider>().enabled = false;
+                        displayHearts[i].GetComponent<Rigidbody>().useGravity = false;
+                        displayHearts[i].transform.position = originalHeartPositions[i].transform.position;
                         displayHearts[i].SetActive(true);
                     }
 
                     StartCoroutine(DelayedDeactivation(displayHearts[i]));
-
-                    if (i == (displayHearts.Count - 1))
-                    {
-                        //if gets here instead of return, all hearts deactivated, game over / restart button activation
-                    }
 
                     //all modifications have been made and end
                     if(heartMod == 0)

@@ -53,6 +53,11 @@ namespace VRJammies.Framework.Core.Health
         private bool destroyed = false;
 
 
+        public int GetStartingHealth()
+        {
+            return _startingHealth;
+        }
+
         private void Start()
         {
             healthController = transform.root.GetComponentInChildren<HealthController>();
