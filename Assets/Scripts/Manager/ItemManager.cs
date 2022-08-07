@@ -8,12 +8,14 @@ namespace VRJammies.Framework.Core.ItemLifecyle
 {
     public enum ItemNames { 
         GasCan, 
-        PipeForGasCan, 
-        BroomStick, 
-        ToxicBottle, 
+        FlamePipe, 
+        BroomStickVar1,
+        BroomStickVar2,
+        ToxicTank, 
         WaterGun, 
         CarDoor, 
-        MacheteBlade, 
+        ButcherBlade, 
+        Machete,
         TrashCanCover 
     }
 
@@ -27,56 +29,53 @@ namespace VRJammies.Framework.Core.ItemLifecyle
     
     public class ItemManager : Singleton<ItemManager>
     {
+[Range(-200,200)]
+        public float nudgePower = 70f;
+        
         private void OnEnable()
         {
             GameActions.onInitialSpawn += SpawnItem;
+            GameActions.onItemDestroyed += SpawnItem;
             GameActions.onDestroyLimb += DeactiveSpawnZones;
         }
         
         private void OnDisable()
         {
             GameActions.onInitialSpawn -= SpawnItem;
+            GameActions.onItemDestroyed -= SpawnItem;
             GameActions.onDestroyLimb -= DeactiveSpawnZones;
         }
          
         // Spawn item depending on item selection
         private void SpawnItem(SpawnableItem item, GameObject spawnZone)
-        {
-            float angleStep = 360f / item.Amount;
-            float angle = 0f;
-                
-            for (int i = 0; i < item.Amount - 1; i++)
+        { 
+            // Radial spawn of the selected items 
+            for (int i = 0; i < item.Amount; i++)
             {
-                var startPos = spawnZone.transform.position;
-                float itemX = startPos.x + Mathf.Sin((angle * Mathf.PI) / 180) * item.Radius;
-                float itemY = startPos.y + Mathf.Sin((angle * Mathf.PI) / 180) * item.Radius;
-
-                Vector3 itemVector = new Vector3(itemX, itemY, 0);
-                Vector3 startPoint = new Vector3(startPos.x, startPos.y, startPos.z);
-                Vector3 itemMoveDirection = (itemVector - startPoint).normalized;
+                float angle = i * Mathf.PI * 2f / item.Amount;
+                Vector3 newPos = new Vector3(Mathf.Cos(angle) * item.Radius, 0, Mathf.Sin(angle) * item.Radius);
+                Vector3 itemPosition = spawnZone.transform.position + newPos;
+                Quaternion itemRotation = item.Prefab.transform.rotation.normalized;
                 
-                    
+                GameObject itemToInstantiate = Instantiate(
+                    item.Prefab, 
+                    itemPosition, 
+                    itemRotation);
+                 
                 // need to pick a random position around originPoint but inside spawnRadius
                 // must not be too close to another agent inside radiusScale
                 Debug.Log(item.Name + " spawned.");
-
-                var newItem = Instantiate(
-                    item.Prefab,
-                    startPoint,
-                    Quaternion.identity);
-
-                newItem.GetComponent<Rigidbody>().velocity = new Vector3(
-                    itemMoveDirection.x,
-                    itemMoveDirection.y,
-                    0);
-
-                angle += angleStep;
-
+  
                 // Add DestroyOnStandStill 
                 // Scipt checks if item is still for period X
                 // -> If yes it will be destroyed or deactivated. 
-                newItem.AddComponent<DestroyOnStandStill>();
-                newItem.GetComponent<DestroyOnStandStill>().enabled = false;
+                // newItem.AddComponent<DestroyOnStandStill>(); 
+
+                // To prevent the items in the drop zone from disappearing, the DestroyOnStandStill scipt is disabled inside the boundary.
+                itemToInstantiate.GetComponent<DestroyOnStandStill>().enabled = false;
+                
+                // So that some items can lean against a wall or the like, the item is given a little nudge ;)
+                itemToInstantiate.GetComponent<Rigidbody>().AddForce(-transform.right * 70f);
             }
         }
         

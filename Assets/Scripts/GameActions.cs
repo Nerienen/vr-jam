@@ -10,6 +10,7 @@ namespace VRJammies.Framework.Core.ItemLifecyle
     {
         // spawn actions to subscribe
         public static Action<SpawnableItem, GameObject> onInitialSpawn;
+        public static Action<SpawnableItem, GameObject> onItemDestroyed;
         public static Action<SpawnableItem> onDestroyLimb;
     }
 }
