@@ -633,8 +633,7 @@ MonoBehaviour:
   heartDestroyDelayTime: 3
   originalHeart: {fileID: 1429150210110926467}
   deathFlash: {fileID: 0}
-  displayHearts:
-  - {fileID: 1429150210110926467}
+  displayHearts: []
 --- !u!4 &430949012
 Transform:
   m_ObjectHideFlags: 0
@@ -2846,7 +2845,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2966401694042482326, guid: 99719a952ebeb9d4f87dc43833721a5d, type: 3}
       propertyPath: _startingHealth
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2966401694042482326, guid: 99719a952ebeb9d4f87dc43833721a5d, type: 3}
       propertyPath: onPlayerDamaged.m_PersistentCalls.m_Calls.Array.size
