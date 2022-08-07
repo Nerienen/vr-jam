@@ -73,7 +73,7 @@ namespace VRJammies.Framework.Core.Health
             _lastDamageForce = collision.impulse.magnitude;
             //_lastRelativeVelocity = collision.relativeVelocity.magnitude;
 
-            if (_lastDamageForce >= _minForce) {
+            if (_lastDamageForce >= _minForce) {    
                 // Can we damage what we hit?
                 Damageable d = collision.GetContact(0).otherCollider.gameObject.GetComponentInParent<Damageable>();
                 //Damageable d = collision.collider.transform.root.GetComponentInChildren<Damageable>();
