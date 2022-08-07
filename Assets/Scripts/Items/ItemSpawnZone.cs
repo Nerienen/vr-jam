@@ -8,11 +8,11 @@ namespace VRJammies.Framework.Core.ItemLifecyle
 {
     public class ItemSpawnZone : MonoBehaviour
     {
-        [Range(0,1200)]
-        public int spawnRadius = 44; // adjust the spawn radius
+        [Range(0,5)]
+        public int spawnRadius = 1; // adjust the spawn radius
         
-        [Range(0,10)]
-        public int spawnAmount = 3; // adjust the spawn amount
+        [Range(1,10)]
+        public int spawnAmount = 1; // adjust the spawn amount
         
         public ItemNames itemName; // added in Unity GUI
  
