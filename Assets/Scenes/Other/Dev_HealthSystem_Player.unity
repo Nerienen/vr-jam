@@ -2845,7 +2845,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2966401694042482326, guid: 99719a952ebeb9d4f87dc43833721a5d, type: 3}
       propertyPath: _startingHealth
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2966401694042482326, guid: 99719a952ebeb9d4f87dc43833721a5d, type: 3}
       propertyPath: onPlayerDamaged.m_PersistentCalls.m_Calls.Array.size
