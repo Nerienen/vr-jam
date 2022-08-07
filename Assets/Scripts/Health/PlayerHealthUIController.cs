@@ -41,10 +41,11 @@ namespace VRJammies.Framework.Core.Health
             }
         }
 
-        // Update is called once per frame
-        public void UpdateHealthUI(bool isDamage = true)
+        //adjustment to health UI - can ingest positive or negative values to add or remove health
+        public void UpdateHealthUI(int healthMod)
         {
-            //TODO - potentially add value consideration (if value = 1 of damage, then do, otherwise not enough health to lose heart)
+            int heartMod = healthMod;
+
             for(int i = 0; i < displayHearts.Count; i++)
             {
                 if (displayHearts[i].activeSelf)
@@ -56,6 +57,19 @@ namespace VRJammies.Framework.Core.Health
                     //displayHearts[i].GetComponent<Rigidbody>().useGravity = true;
                     displayHearts[i].SetActive(false);
 
+                    //optional solution: Mathf.Sign(heartMod) == 1
+
+                    if (heartMod > 0)
+                    {
+                        heartMod--;
+                        displayHearts[i].SetActive(false);
+                    }
+                    else if (heartMod < 0)
+                    {
+                        heartMod++;
+                        displayHearts[i].SetActive(true);
+                    }
+
                     StartCoroutine(DelayedDeactivation(displayHearts[i]));
 
                     if (i == (displayHearts.Count - 1))
@@ -63,12 +77,13 @@ namespace VRJammies.Framework.Core.Health
                         //if gets here instead of return, all hearts deactivated, game over / restart button activation
                     }
 
-                    return;
+                    //all modifications have been made and end
+                    if(heartMod == 0)
+                    {
+                        return;
+                    }
                 }
             }
-
-            //TODO - do inverse if isDamage = false (for soda's etc)
-            //isDamage == false
 
             //depreciated
             /*

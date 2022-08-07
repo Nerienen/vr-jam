@@ -48,7 +48,7 @@ namespace VRJammies.Framework.Core.Health
         public UnityEvent onRespawn;
 
         [Tooltip("Subbed to by PlayerHealthUIController to update Player UI")]
-        public UnityEvent onPlayerDamaged;
+        public UnityEvent<int> onPlayerDamaged;
 
         private bool destroyed = false;
 
@@ -130,7 +130,7 @@ namespace VRJammies.Framework.Core.Health
             {
                 if(onPlayerDamaged != null)
                 {
-                    onPlayerDamaged.Invoke();
+                    onPlayerDamaged.Invoke(damageAmount);
                 }
             }
 
