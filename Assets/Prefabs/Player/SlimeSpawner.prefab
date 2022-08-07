@@ -388,6 +388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrabInteractablePrefab: {fileID: 4324790359256168745, guid: c3283fa2c9c33e548b2d1546f7d6aea1, type: 3}
   InteractionManager: {fileID: 0}
+  _shouldPoolObjects: 1
   _projectileList: []
 --- !u!114 &8799829682354234329
 MonoBehaviour:

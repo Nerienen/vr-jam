@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 1284954225}
   - component: {fileID: 1284954226}
   - component: {fileID: 1284954221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Socket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 2048
   m_AttachTransform: {fileID: 1284954220}
   m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 1470282215}
   - component: {fileID: 1470282214}
   - component: {fileID: 1470282213}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Socket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 2048
   m_AttachTransform: {fileID: 1470282212}
   m_KeepSelectedTargetValid: 1
   m_StartingSelectedInteractable: {fileID: 0}
