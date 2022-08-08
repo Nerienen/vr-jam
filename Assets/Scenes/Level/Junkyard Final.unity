@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08844238, g: 0.13882786, b: 0.13075683, a: 1}
+  m_IndirectSpecularColor: {r: 0.088705376, g: 0.1395733, b: 0.13105384, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4789,7 +4789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 449566979}
   - component: {fileID: 449566978}
-  - component: {fileID: 449566977}
+  - component: {fileID: 449566980}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -4797,26 +4797,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &449566977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449566976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &449566978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4847,6 +4827,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &449566980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449566976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
 --- !u!1 &451389317
 GameObject:
   m_ObjectHideFlags: 0
@@ -5198,7 +5207,7 @@ RectTransform:
   m_GameObject: {fileID: 470595406}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.080984004, y: 0.072145, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 133361477}
@@ -5206,7 +5215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.00000010430813, y: 0}
+  m_AnchoredPosition: {x: 0.00000010430813, y: -0.13858}
   m_SizeDelta: {x: 19.7, y: 9.95}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &470595408
@@ -5222,7 +5231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.6954007, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5230,10 +5239,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7ef89a528bbaf4040a542867087089b2, type: 3}
     m_FontSize: 1
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 3
@@ -5242,7 +5251,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A blade on a broom makes a perfect cutting tool for cables!
+  m_Text: A  blade  on  a  broom  makes  a  perfect  cutting  tool  for  cables!
 --- !u!222 &470595409
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8430,7 +8439,7 @@ RectTransform:
   m_GameObject: {fileID: 840124283}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.089236, y: 0.083384, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 907832011}
@@ -8438,7 +8447,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.00000010430813, y: 0}
+  m_AnchoredPosition: {x: 0.00000010430813, y: -0.08266497}
   m_SizeDelta: {x: 19.7, y: 9.95}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &840124285
@@ -8454,7 +8463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.66279554, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8462,10 +8471,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7ef89a528bbaf4040a542867087089b2, type: 3}
     m_FontSize: 1
-    m_FontStyle: 0
-    m_BestFit: 0
+    m_FontStyle: 1
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 3
@@ -8478,12 +8487,12 @@ MonoBehaviour:
 
     - Metal can melt
 
-    - Carboard can burn
+    - Cardboard - BURN
 
-    - Cables can
-    be slashed
+    - Cables - can
+    be SLASHED
 
-    - Fragile things break on any damage
+    - Fragile  things  BREAK  on  any  damage
 
 '
 --- !u!222 &840124286
@@ -10251,7 +10260,7 @@ RectTransform:
   m_GameObject: {fileID: 993591169}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.084567, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1843943774}
@@ -10275,7 +10284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.67765236, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -10283,9 +10292,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7ef89a528bbaf4040a542867087089b2, type: 3}
     m_FontSize: 1
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 300
@@ -10295,9 +10304,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Crafting:\n\n1. Pick up Pipe\n2. Pick up gum from your left waist holster\n3.
-    Stick gum onto the pipe\n4. Put gas can on the sticky pipe\n\n= Flame Pipe \n\nPress
-    Trigger while holding to shoot!\nCareful may explode.."
+  m_Text: "Crafting:\n\n1. Pick  up  Pipe\n2. Pick  up  gum  from  your  left waist 
+    holster\n3. Stick  gum  onto  the  pipe\n4. Put  gas  can  on  the  sticky  pipe\n\n=
+    Flame Pipe \n\nPress Trigger while holding to shoot!\nCareful may explode.."
 --- !u!222 &993591172
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11239,7 +11248,7 @@ RectTransform:
   m_GameObject: {fileID: 1070892581}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.086789005, y: 0.072736, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8057962}
@@ -11247,7 +11256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.00000010430813, y: 0}
+  m_AnchoredPosition: {x: 0.00000010430813, y: -0.13564}
   m_SizeDelta: {x: 19.7, y: 9.95}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1070892583
@@ -11263,7 +11272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.6664481, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -11271,10 +11280,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7ef89a528bbaf4040a542867087089b2, type: 3}
     m_FontSize: 1
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 3
@@ -11283,7 +11292,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Maybe you can melt the metal plates away  .. but how?
+  m_Text: Maybe  you  can  melt  the  metal  plates away  .. but how?
 --- !u!222 &1070892584
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12289,7 +12298,7 @@ RectTransform:
   m_GameObject: {fileID: 1144957173}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.083114, y: 0.071868, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1824393111}
@@ -12297,7 +12306,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.00000010430813, y: 0}
+  m_AnchoredPosition: {x: 0.00000010430813, y: -0.13996}
   m_SizeDelta: {x: 21.6, y: 9.95}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1144957175
@@ -12313,7 +12322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.70397806, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12321,10 +12330,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7ef89a528bbaf4040a542867087089b2, type: 3}
     m_FontSize: 1
-    m_FontStyle: 0
-    m_BestFit: 0
+    m_FontStyle: 1
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 3
@@ -12333,8 +12342,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "These power cells are connected to that gate.\n \nThey seem fragile, but
-    how can I reach them?"
+  m_Text: "These  power  cells  are  connected  to  that  gate.\n \nThey  seem  fragile, 
+    but  how  can  I  reach  them?"
 --- !u!222 &1144957176
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12706,7 +12715,7 @@ RectTransform:
   m_GameObject: {fileID: 1211723790}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.07989668, y: 0.07625866, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 708364509}
@@ -12714,7 +12723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.00000010430813, y: 0}
+  m_AnchoredPosition: {x: 0.00000010430813, y: -0.11812}
   m_SizeDelta: {x: 19.7, y: 9.95}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1211723792
@@ -12730,7 +12739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.6099076, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12738,10 +12747,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7ef89a528bbaf4040a542867087089b2, type: 3}
     m_FontSize: 1
-    m_FontStyle: 0
-    m_BestFit: 0
+    m_FontStyle: 1
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 300
     m_Alignment: 3
@@ -12750,8 +12759,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: We didn't had time to put any of the planned easter eggs in the game. Stay
-    tuned for the full release after the game jam! <3
+  m_Text: This area was closed. Stay tuned for the full release after the game jam!
+    <3
 --- !u!222 &1211723793
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14624,7 +14633,7 @@ RectTransform:
   m_GameObject: {fileID: 1405857455}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.085030004, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 713344352}
@@ -14648,7 +14657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.6729088, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14656,7 +14665,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7ef89a528bbaf4040a542867087089b2, type: 3}
     m_FontSize: 1
     m_FontStyle: 0
     m_BestFit: 0
@@ -14668,8 +14677,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Tip: Gum is always used in the green transparent spheres on objects. \n\nExample:
-    Pipes or Brooms!"
+  m_Text: "Tip: \nGum  is  always  used  in  the  green  transparent  spheres  on 
+    objects. \n\nExample:\n Pipes  or  Brooms!"
 --- !u!222 &1405857458
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23946,7 +23955,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6250585657551207053}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 13.384728, y: 0.001, z: -5.7360196}
+  m_LocalPosition: {x: 13.384728, y: 0.02, z: -5.7360196}
   m_LocalScale: {x: 2.451175, y: 2.4511747, z: 2.4511747}
   m_ConstrainProportionsScale: 0
   m_Children: []
