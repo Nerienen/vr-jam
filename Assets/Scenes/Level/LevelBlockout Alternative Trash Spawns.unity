@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18018606, g: 0.22559257, b: 0.30678663, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -752,6 +752,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &100949039
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -996,6 +999,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &144981147
@@ -1289,6 +1295,85 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166322348}
   m_Mesh: {fileID: -3329902420748629119, guid: eda9f1b311e774900b5c1e121193ac61, type: 3}
+--- !u!1 &174743132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 174743133}
+  - component: {fileID: 174743135}
+  - component: {fileID: 174743136}
+  m_Layer: 0
+  m_Name: BossBGMTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &174743133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174743132}
+  m_LocalRotation: {x: -0.1884676, y: 0.6815277, z: 0.6815277, w: 0.1884676}
+  m_LocalPosition: {x: -59.1, y: -10.8, z: 6.5}
+  m_LocalScale: {x: 3417.3564, y: 3417.3564, z: 3417.3564}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1295289338}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 149.084}
+--- !u!114 &174743135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174743132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1905000562
+      Data2: 1271501702
+      Data3: -1814755939
+      Data4: 1118157439
+    Path: event:/music/3-boss-fight/boss-music
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: stage-of-fight
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!64 &174743136
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174743132}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: b3c80fa85388dec4784b384b7e1a8a60, type: 3}
 --- !u!1001 &212130972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1613,6 +1698,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &238503647
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1802,6 +1890,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!136 &250118752
@@ -2023,6 +2114,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &294020829
@@ -2549,6 +2643,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &364133947
@@ -3568,6 +3665,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &492220477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3688,6 +3788,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &496706610
@@ -4629,6 +4732,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &673563771
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4751,6 +4857,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &698628576
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4871,6 +4980,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!136 &718870773
@@ -5093,6 +5205,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &753047465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5215,6 +5330,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &771919771
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5335,6 +5453,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &782800560
@@ -5906,6 +6027,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &809566691
@@ -7314,6 +7438,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1072321564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7584,6 +7711,82 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093467944}
   m_Mesh: {fileID: 7376856794285995124, guid: eda9f1b311e774900b5c1e121193ac61, type: 3}
+--- !u!1 &1094392518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1094392519}
+  - component: {fileID: 1094392521}
+  - component: {fileID: 1094392520}
+  m_Layer: 0
+  m_Name: IntroBGMTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1094392519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094392518}
+  m_LocalRotation: {x: -0, y: 0.27573204, z: -0, w: 0.9612346}
+  m_LocalPosition: {x: -14.8, y: 2, z: -7.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1295289338}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 32.011, z: 0}
+--- !u!65 &1094392520
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094392518}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 54.522026, y: 5, z: 116.21734}
+  m_Center: {x: 13.117562, y: 0, z: 9.396496}
+--- !u!114 &1094392521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094392518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -474565065
+      Data2: 1159601865
+      Data3: 351675063
+      Data4: -42994849
+    Path: event:/music/1-intro-room/safe-zone-with-loop
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1097433182
 GameObject:
   m_ObjectHideFlags: 0
@@ -7738,6 +7941,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &1106477825
@@ -7955,6 +8161,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1144988649
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8137,6 +8346,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &1152232695
@@ -8533,6 +8745,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 578522870858837582, guid: 76817203986f4bd428df907b5a66dd6f, type: 3}
   m_PrefabInstance: {fileID: 1221160447}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1222782153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1222782154}
+  - component: {fileID: 1222782156}
+  - component: {fileID: 1222782155}
+  m_Layer: 0
+  m_Name: ExitBGMTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1222782154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222782153}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -54.9, y: 2, z: 58.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1295289338}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1222782155
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222782153}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 70.77739, y: 5, z: 30.456734}
+  m_Center: {x: -14.752295, y: 0, z: 0.39622498}
+--- !u!114 &1222782156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222782153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 1636474033
+      Data2: 1159326876
+      Data3: 2065672889
+      Data4: 2081512008
+    Path: event:/music/4-ending-sequence/ending-sequence
+  Event: 
+  PlayEvent: 3
+  StopEvent: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1230863553
 GameObject:
   m_ObjectHideFlags: 0
@@ -8590,6 +8878,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &1230863556
@@ -8857,6 +9148,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &1256340325
@@ -9187,6 +9481,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8319389099785933181, guid: acd9d57bf2bb1404b8b9478b2e429273, type: 3}
   m_PrefabInstance: {fileID: 1294689643}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1295289337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1295289338}
+  m_Layer: 0
+  m_Name: BGMTriggers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1295289338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295289337}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1094392519}
+  - {fileID: 174743133}
+  - {fileID: 1222782154}
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1295343464
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9306,6 +9634,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &1296554050
@@ -9655,6 +9986,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1342663110
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9868,6 +10202,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &1363858021
@@ -10293,6 +10630,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1422419509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10475,6 +10815,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &1428009146
@@ -10680,6 +11023,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!136 &1441612157
@@ -11810,6 +12156,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1576315043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12281,6 +12630,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &1646217511
@@ -12865,6 +13217,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1750115547
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13348,6 +13703,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1808758743
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13630,6 +13988,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &1836918153
@@ -14264,6 +14625,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &1903691136
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -14385,6 +14749,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!136 &1915040922
@@ -15052,6 +15419,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1953386850
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15317,6 +15687,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!65 &1974569323
@@ -15702,6 +16075,9 @@ MonoBehaviour:
   onRespawn:
     m_PersistentCalls:
       m_Calls: []
+  onPlayerDamaged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2022815768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15982,6 +16358,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onRespawn:
+    m_PersistentCalls:
+      m_Calls: []
+  onPlayerDamaged:
     m_PersistentCalls:
       m_Calls: []
 --- !u!136 &2044779032
@@ -16667,7 +17046,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin Custom
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6401763131473957125, guid: 99719a952ebeb9d4f87dc43833721a5d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 99719a952ebeb9d4f87dc43833721a5d, type: 3}
 --- !u!4 &2102261983 stripped
 Transform:
@@ -16679,6 +17059,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6401763131585759453, guid: 99719a952ebeb9d4f87dc43833721a5d, type: 3}
   m_PrefabInstance: {fileID: 2102261982}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2102261985 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6401763131473957177, guid: 99719a952ebeb9d4f87dc43833721a5d, type: 3}
+  m_PrefabInstance: {fileID: 2102261982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2102261986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102261985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1001 &2104002764
 PrefabInstance:
   m_ObjectHideFlags: 0
