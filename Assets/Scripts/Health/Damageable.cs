@@ -68,7 +68,7 @@ namespace VRJammies.Framework.Core.Health
         public void DealDamage(int damageAmount, DamageForm damageType, DamageCollider damageDealer)
         {
 
-            if (destroyed)
+            if (destroyed || !this.isActiveAndEnabled)
             {
                 return;
             }
@@ -83,7 +83,7 @@ namespace VRJammies.Framework.Core.Health
         public void DealDamage(int damageAmount, DamageForm damageType)
         {
 
-            if (destroyed)
+            if (destroyed || !this.isActiveAndEnabled)
             {
                 return;
             }
