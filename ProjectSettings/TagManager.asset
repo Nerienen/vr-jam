@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LeftHandUIAttach
   - LeftHand
+  - SpawnZone
   layers:
   - Default
   - TransparentFX

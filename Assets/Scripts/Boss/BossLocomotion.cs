@@ -28,12 +28,6 @@ namespace VRJammies.Framework.Core.Boss
 
         private void Awake()
         {
-            agent = GetComponent<NavMeshAgent>();
-            if (agent == null)
-            {
-                Debug.LogError($"Cannot find NavMeshAgent");
-            }
-
             playerFinder = GetComponent<PlayerFinder>();
             if (playerFinder == null)
             {
@@ -54,6 +48,11 @@ namespace VRJammies.Framework.Core.Boss
         }
 
         private void Start()
+        {
+            SetUpAgent();
+        }
+
+        private void OnValidate()
         {
             SetUpAgent();
         }
@@ -86,6 +85,13 @@ namespace VRJammies.Framework.Core.Boss
         [ContextMenu("Set up agent")]
         private void SetUpAgent()
         {
+            agent = GetComponent<NavMeshAgent>();
+            if (agent == null)
+            {
+                Debug.LogError($"Cannot find NavMeshAgent");
+                return;
+            }
+            
             agent.speed = bossSpeed;
             agent.height = bossHeight;
             agent.radius = bossGirth;
@@ -95,6 +101,12 @@ namespace VRJammies.Framework.Core.Boss
 
         private void MoveToTarget()
         {
+            if ((agent.destination - transform.position).magnitude <= minDistanceToPlayer)
+            {
+                agent.isStopped = true;
+                return;
+            }
+            agent.isStopped = false;
             transform.position = agent.nextPosition;
             // See here to couple locomotion with animation:
             // https://docs.unity3d.com/Manual/nav-CouplingAnimationAndNavigation.html
@@ -150,23 +162,23 @@ namespace VRJammies.Framework.Core.Boss
             agent.SetDestination(target);
         }
 
-        private void OnPlayerFound(Vector3 playerPos)
+        private void OnPlayerFound(Player.Player player)
         {
-            SetTarget(playerPos);
+            SetTarget(player.transform.position);
             if (boss.state is BehaviorState.Idle or BehaviorState.PlayerLost)
             {
                 boss.state = BehaviorState.PlayerFound;
             }
         }
 
-        private void OnPlayerStillVisible(Vector3 playerPos)
+        private void OnPlayerStillVisible(Player.Player player)
         {
-            SetTarget(playerPos);
+            SetTarget(player.transform.position);
         }
 
-        private void OnPlayerLost(Vector3 playerLastKnownPos)
+        private void OnPlayerLost(Player.Player player)
         {
-            SetTarget(playerLastKnownPos);
+            SetTarget(player.transform.position);
             boss.state = BehaviorState.PlayerLost;
             playerLostTime = Time.time + searchTimeInSeconds;
         }

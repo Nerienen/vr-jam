@@ -30,6 +30,7 @@ namespace VRJammies.Framework.Core.Health
         public float _lastDamageForce = 0;
 
         // Destroy this object after dealing damage
+        [SerializeField]
         protected bool _destroyOnDamaging = true;
 
         protected GameObject CraftingSocketGO;
@@ -73,7 +74,7 @@ namespace VRJammies.Framework.Core.Health
             _lastDamageForce = collision.impulse.magnitude;
             //_lastRelativeVelocity = collision.relativeVelocity.magnitude;
 
-            if (_lastDamageForce >= _minForce) {
+            if (_lastDamageForce >= _minForce) {    
                 // Can we damage what we hit?
                 Damageable d = collision.GetContact(0).otherCollider.gameObject.GetComponentInParent<Damageable>();
                 //Damageable d = collision.collider.transform.root.GetComponentInChildren<Damageable>();
@@ -93,6 +94,11 @@ namespace VRJammies.Framework.Core.Health
         public void SetCraftingSocket(GameObject craftingSocket) 
         {
             CraftingSocketGO = craftingSocket;
+        }
+
+        public void SetDamageType(DamageForm damageForm) 
+        {
+            _damageForm = damageForm;
         }
 
         protected void ReactivateCraftingSocket()

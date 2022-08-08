@@ -98,22 +98,22 @@ namespace VRJammies.Framework.Core.Boss
             doneAttacking = true;
         }
 
-        private void OnPlayerLost(Vector3 pos)
+        private void OnPlayerLost(Player.Player player)
         {
             hasPlayer = false;
-            playerPos = pos;
+            playerPos = player.transform.position;
         }
 
-        private void OnPlayerFound(Vector3 pos)
+        private void OnPlayerFound(Player.Player player)
         {
             hasPlayer = true;
-            playerPos = pos;
+            playerPos = player.transform.position;
         }
 
-        private void OnPlayerVisible(Vector3 pos)
+        private void OnPlayerVisible(Player.Player player)
         {
             hasPlayer = true;
-            playerPos = pos;
+            playerPos = player.transform.position;
         }
 
 #if UNITY_EDITOR

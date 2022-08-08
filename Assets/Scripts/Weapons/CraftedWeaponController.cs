@@ -17,6 +17,11 @@ public class CraftedWeaponController : MonoBehaviour
             var _craftingSocket = obj.interactorObject;
             GameObject attachedObject = obj.interactableObject.transform.gameObject;
 
+            if (attachedObject.transform.root.GetComponentInChildren<DestroyOnStandStill>())
+            {
+                attachedObject.transform.root.GetComponentInChildren<DestroyOnStandStill>().enabled = false;
+            }
+
 
             // Check if the referencing was succesfull 
             if (attachedObject != null)
