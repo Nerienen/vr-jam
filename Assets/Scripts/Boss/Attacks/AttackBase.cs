@@ -1,10 +1,12 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace VRJammies.Framework.Core.Boss
 {
     public class AttackBase : MonoBehaviour, IAttack
     {
+        public UnityEvent onAttack;
         public event Action DoneAttacking;
         
         public virtual bool CanAttack()

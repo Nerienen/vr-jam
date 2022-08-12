@@ -86,6 +86,7 @@ public class LaserLimb : AttackBase
         yield return new WaitForSeconds(5f);
         prepShot.Stop();
         bullet.Play();
+        onAttack.Invoke();
         yield return new WaitForSeconds(0.3f);
         bullet.Stop();
 
