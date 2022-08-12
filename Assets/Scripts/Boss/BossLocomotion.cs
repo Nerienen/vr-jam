@@ -23,15 +23,12 @@ namespace VRJammies.Framework.Core.Boss
         [Header("Events")]
         [Range(0, 300)]
         [SerializeField] private float locomotionChangeMultiplier = 1f;
-        [SerializeField] private float locomotionMinDelta = 0.5f;
         public UnityEvent<float> onBossLocomotionChange;
+        public UnityEvent onBossLocomotionStart;
+        public UnityEvent onBossLocomotionStop;
 
         private Boss boss;
         private NavMeshAgent agent;
-        private Vector2 smoothDeltaPosition = Vector2.zero;
-        private Vector2 velocity;
-        private float lastSpeed;
-        private float maxSpeed;
         private PlayerFinder playerFinder;
         private float playerLostTime;
         private float nextWanderTime;
@@ -75,7 +72,11 @@ namespace VRJammies.Framework.Core.Boss
                 // No locomotion in these states
                 case BehaviorState.Attacking:
                 case BehaviorState.Stunned:
-                    onBossLocomotionChange.Invoke(0f);
+                    if (!agent.isStopped)
+                    {
+                        onBossLocomotionStop.Invoke();
+                        onBossLocomotionChange.Invoke(0f);
+                    }
                     agent.isStopped = true;
                     break;
                 case BehaviorState.PlayerLost:
@@ -115,8 +116,17 @@ namespace VRJammies.Framework.Core.Boss
         {
             if ((agent.destination - transform.position).magnitude <= minDistanceToPlayer)
             {
+                if (!agent.isStopped)
+                {
+                    onBossLocomotionStop.Invoke();
+                    onBossLocomotionChange.Invoke(0f);
+                }
                 agent.isStopped = true;
                 return;
+            }
+            if (agent.isStopped)
+            {
+                onBossLocomotionStart.Invoke();
             }
             agent.isStopped = false;
             onBossLocomotionChange.Invoke((agent.nextPosition - transform.position).magnitude * locomotionChangeMultiplier);
