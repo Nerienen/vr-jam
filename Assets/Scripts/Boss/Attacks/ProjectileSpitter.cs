@@ -109,6 +109,7 @@ namespace VRJammies.Framework.Core.Boss
             var direction = (_target.transform.position - _output.transform.position).normalized;
             rb.velocity = direction * _force;
             projectile.transform.parent = null;            
+            onAttack.Invoke();
             OnDoneAttacking();
         }
 

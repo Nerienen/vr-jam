@@ -3,6 +3,7 @@ using System.Linq;
 using Extensions;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 namespace VRJammies.Framework.Core.Boss
 {
@@ -19,8 +20,18 @@ namespace VRJammies.Framework.Core.Boss
         [Range(0, 1)]
         [SerializeField] private float randomPatrolChance;
 
+        [Header("Events")]
+        [Range(0, 300)]
+        [SerializeField] private float locomotionChangeMultiplier = 1f;
+        [SerializeField] private float locomotionMinDelta = 0.5f;
+        public UnityEvent<float> onBossLocomotionChange;
+
         private Boss boss;
         private NavMeshAgent agent;
+        private Vector2 smoothDeltaPosition = Vector2.zero;
+        private Vector2 velocity;
+        private float lastSpeed;
+        private float maxSpeed;
         private PlayerFinder playerFinder;
         private float playerLostTime;
         private float nextWanderTime;
@@ -64,6 +75,7 @@ namespace VRJammies.Framework.Core.Boss
                 // No locomotion in these states
                 case BehaviorState.Attacking:
                 case BehaviorState.Stunned:
+                    onBossLocomotionChange.Invoke(0f);
                     agent.isStopped = true;
                     break;
                 case BehaviorState.PlayerLost:
@@ -107,6 +119,8 @@ namespace VRJammies.Framework.Core.Boss
                 return;
             }
             agent.isStopped = false;
+            onBossLocomotionChange.Invoke((agent.nextPosition - transform.position).magnitude * locomotionChangeMultiplier);
+            // Debug.Log($"Locomotion change: {(agent.nextPosition - transform.position).magnitude * locomotionChangeMultiplier}");
             transform.position = agent.nextPosition;
             // See here to couple locomotion with animation:
             // https://docs.unity3d.com/Manual/nav-CouplingAnimationAndNavigation.html
