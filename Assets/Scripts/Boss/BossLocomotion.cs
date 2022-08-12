@@ -80,15 +80,12 @@ namespace VRJammies.Framework.Core.Boss
                     agent.isStopped = true;
                     break;
                 case BehaviorState.PlayerLost:
-                    agent.isStopped = false;
                     SearchForPlayer();
                     break;
                 case BehaviorState.PlayerFound:
-                    agent.isStopped = false;
                     MoveToTarget();
                     break;
                 case BehaviorState.Idle:
-                    agent.isStopped = false;
                     TryToWander();
                     MoveToTarget();
                     break;
