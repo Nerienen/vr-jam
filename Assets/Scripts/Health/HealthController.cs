@@ -19,6 +19,7 @@ namespace VRJammies.Framework.Core.Health
         [Tooltip("Destroy this object on Death? False if need to respawn.")]
         public bool DestroyOnDeath = false;
 
+        public UnityEvent<float> onDamaged;
         [Tooltip("Optional Event to be called once health is <= 0")]
         public UnityEvent onDestroyed;
 
@@ -43,6 +44,7 @@ namespace VRJammies.Framework.Core.Health
             }
 
             DamageCalculation(damageAmount);
+            onDamaged.Invoke(_currentHealth);
 
             if (_currentHealth <= 0)
             {
