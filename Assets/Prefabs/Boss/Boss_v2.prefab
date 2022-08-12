@@ -271,6 +271,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5891dde9f915244920e29e6ba21caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  onChargeUp:
+    m_PersistentCalls:
+      m_Calls: []
   _target: {fileID: 0}
   _projectilePrefab: {fileID: 2324668574953617844, guid: 778ed487484557f4d8a80d4bd395793a, type: 3}
   _projectileList: []
@@ -2066,6 +2072,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5891dde9f915244920e29e6ba21caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  onChargeUp:
+    m_PersistentCalls:
+      m_Calls: []
   _target: {fileID: 0}
   _projectilePrefab: {fileID: 2146277150381384313, guid: 36b6ffdfbd9d36c47aa8f10bd4b2eb43, type: 3}
   _projectileList: []
@@ -3907,6 +3919,16 @@ MonoBehaviour:
   wanderRadius: 8
   wanderIntervalInSeconds: 7
   randomPatrolChance: 0
+  locomotionChangeMultiplier: 1
+  onBossLocomotionChange:
+    m_PersistentCalls:
+      m_Calls: []
+  onBossLocomotionStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onBossLocomotionStop:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!195 &4850510839882492532
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3964,6 +3986,9 @@ MonoBehaviour:
   _currentHealth: 1
   _damageablesTransform: {fileID: 8879595675821660915}
   DestroyOnDeath: 1
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls: []
   onDestroyed:
     m_PersistentCalls:
       m_Calls:
@@ -5159,6 +5184,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d11b0ea9ca4c6c40af4218f9f2b8113, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  onChargeUp:
+    m_PersistentCalls:
+      m_Calls: []
   turnSpeed: 8
   indicatorRenderer: {fileID: 8402047569533741647}
   prepShot: {fileID: 8402047569946155488}

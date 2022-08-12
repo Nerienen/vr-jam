@@ -80,6 +80,7 @@ namespace VRJammies.Framework.Core.Health
                 DestroyThis();
             }
         }
+
         public void DealDamage(int damageAmount, DamageForm damageType)
         {
 
@@ -150,6 +151,8 @@ namespace VRJammies.Framework.Core.Health
         {
             DestroyOnDeath = destroyOnDeath;
         }
+
+        [ContextMenu("DestroyThis")]
 
         public void DestroyThis()
         {

@@ -83,6 +83,7 @@ public class LaserLimb : AttackBase
     public IEnumerator PrepShot()
     {
         prepShot.Play();
+        onChargeUp.Invoke();
         yield return new WaitForSeconds(5f);
         prepShot.Stop();
         bullet.Play();
