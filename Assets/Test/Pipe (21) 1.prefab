@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7309358492089197894
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7922010200602339092, guid: 34ff1df6bad53429290172acda252440, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922010200602339092, guid: 34ff1df6bad53429290172acda252440, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 34.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922010200602339092, guid: 34ff1df6bad53429290172acda252440, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.432
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922010200602339092, guid: 34ff1df6bad53429290172acda252440, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922010200602339092, guid: 34ff1df6bad53429290172acda252440, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.707107
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922010200602339092, guid: 34ff1df6bad53429290172acda252440, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922010200602339092, guid: 34ff1df6bad53429290172acda252440, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922010200602339092, guid: 34ff1df6bad53429290172acda252440, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071066
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922010200602339092, guid: 34ff1df6bad53429290172acda252440, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922010200602339092, guid: 34ff1df6bad53429290172acda252440, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922010200602339092, guid: 34ff1df6bad53429290172acda252440, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922010200602339112, guid: 34ff1df6bad53429290172acda252440, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: ba62423a2eddd47608f7e9f0d7a9e8bb, type: 2}
+    - target: {fileID: 7922010200602339114, guid: 34ff1df6bad53429290172acda252440, type: 3}
+      propertyPath: m_Name
+      value: Pipe (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7922010200602339115, guid: 34ff1df6bad53429290172acda252440, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: ba62423a2eddd47608f7e9f0d7a9e8bb, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 34ff1df6bad53429290172acda252440, type: 3}
