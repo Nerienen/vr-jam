@@ -37476,6 +37476,10 @@ PrefabInstance:
       propertyPath: onAttack.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 589662475187614810, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 653897193866265415, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -37488,6 +37492,14 @@ PrefabInstance:
       propertyPath: onDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 905224151}
+    - target: {fileID: 1427636149903328814, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2476475648466605407, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 124.519
+      objectReference: {fileID: 0}
     - target: {fileID: 4495811985818363601, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
@@ -37644,9 +37656,17 @@ PrefabInstance:
       propertyPath: onDestroyed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5562932272597792539, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5782834989241623879, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.046
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143155915285547243, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6376940796704289069, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -37764,6 +37784,10 @@ PrefabInstance:
       propertyPath: onAttack.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8024304520087426989, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8402047569015906106, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -37827,6 +37851,10 @@ PrefabInstance:
     - target: {fileID: 8402047569533741646, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
       propertyPath: onChargeUp.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8452406242529846622, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8540178854464127325, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
       propertyPath: m_Enabled
@@ -37924,6 +37952,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: cdfc15bdc9e3be647a6f1357c9b7d8eb, type: 2}
+    - target: {fileID: 8679665848439225730, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9ed71ba1d8ca574da205b32c606c39b, type: 3}
 --- !u!1 &4220884714653297949 stripped
