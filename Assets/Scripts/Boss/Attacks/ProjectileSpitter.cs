@@ -58,7 +58,11 @@ namespace VRJammies.Framework.Core.Boss
                     canAttack = true;
                 }
             }
-            else _timer = 0;
+            else
+            {
+                _timer = 0;
+                canAttack = false;
+            }
         }
 
         private void SpawnProjectile()

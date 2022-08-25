@@ -869,6 +869,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2476475648466605407}
+  - component: {fileID: 9212530011624110636}
   m_Layer: 7
   m_Name: Saw Limb
   m_TagString: Untagged
@@ -889,9 +890,34 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9081273478832291812}
+  - {fileID: 2083922092096651679}
   m_Father: {fileID: 8875735410375998399}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -0.305, y: -273.85602, z: 45.763}
+--- !u!114 &9212530011624110636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720963630826108515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e4bfbe8ab5c44d9860db079ff3e15e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAttack:
+    m_PersistentCalls:
+      m_Calls: []
+  onChargeUp:
+    m_PersistentCalls:
+      m_Calls: []
+  animator: {fileID: 5765399326323877736}
+  forwardTransform: {fileID: 2083922092096651679}
+  playerFinder: {fileID: 4850510839882492530}
+  attackDelay: 1
+  rotationSpeed: 4
+  rotationOffset: {x: -0.64266884, y: -0.29491636, z: -0.642671, w: 0.29491544}
 --- !u!1 &790440974543637213
 GameObject:
   m_ObjectHideFlags: 0
@@ -3847,7 +3873,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4850510839053372799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.635, z: 4.034}
+  m_LocalPosition: {x: 0, y: 2.35, z: 4.034}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3947,7 +3973,7 @@ MonoBehaviour:
   bossSpeed: 2
   bossHeight: 4.25
   bossGirth: 2.98
-  minDistanceToPlayer: 11
+  minDistanceToPlayer: 5.5
   searchTimeInSeconds: 3
   wanderRadius: 8
   wanderIntervalInSeconds: 7
@@ -3976,7 +4002,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 11
+  m_StoppingDistance: 5.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -3997,9 +4023,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldownInSeconds: 3
-  meleeAttackRange: 0
+  meleeAttackRange: 6.5
   rangedAttackRange: 12
-  meleeAttacks: []
+  meleeAttacks:
+  - {fileID: 9212530011624110636}
   rangedAttacks:
   - {fileID: 456502453441943714}
   - {fileID: 8402047569533741646}
@@ -4994,6 +5021,37 @@ Transform:
   m_Father: {fileID: 4850510839882492531}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7939505404625479171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2083922092096651679}
+  m_Layer: 0
+  m_Name: Forward
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2083922092096651679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7939505404625479171}
+  m_LocalRotation: {x: -0.61728805, y: -0.3448991, z: -0.617288, w: 0.34489954}
+  m_LocalPosition: {x: 55.500004, y: 81.100006, z: 5.2999783}
+  m_LocalScale: {x: 6398.365, y: 6398.365, z: 6398.3657}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2476475648466605407}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -58.387, y: 90, z: -180}
 --- !u!1 &8161856377684613799
 GameObject:
   m_ObjectHideFlags: 0
