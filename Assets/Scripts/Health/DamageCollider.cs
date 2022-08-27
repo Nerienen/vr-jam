@@ -54,7 +54,7 @@ namespace VRJammies.Framework.Core.Health
 
             if (DamagingCollider == null) 
             {
-                Debug.Log("No specific Damage collider defined on this weapon, will try to find one on this as default");
+                Debug.Log($"No specific Damage collider defined on {gameObject.name}, will try to find one on this as default");
                 DamagingCollider = GetComponentInChildren<Collider>();
             }
         }
