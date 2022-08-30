@@ -36,7 +36,7 @@ namespace VRJammies.Framework.Core.Health
             }
             else
             {
-                _playerDamageable = _player.GetComponent<Damageable>();
+                _playerDamageable = _player.GetComponentInParent<Damageable>();
             }
         }
 
@@ -44,13 +44,15 @@ namespace VRJammies.Framework.Core.Health
         {
             int heartCount = _playerDamageable.GetStartingHealth();
             Renderer heartRend = originalHeart.GetComponent<Renderer>();
-            float heartWidth = heartRend.bounds.size.x;
+            float heartWidth = heartRend.localBounds.size.z;
 
-            //instantiate new hearts based on existing hearts on dameagable
+            //instantiate new hearts based on existing starting health on dameagable
             for (int i = 0; i < heartCount; i++)
             {
                 GameObject heart = Instantiate(originalHeart, this.transform);
-                heart.transform.position = new Vector3(heart.transform.position.x + (heartWidth * i), heart.transform.position.y, heart.transform.position.z);
+                Vector3 localSpaceUIPosition = transform.InverseTransformPoint(heart.transform.position);
+                localSpaceUIPosition += new Vector3((heartWidth * i), 0, 0);
+                heart.transform.localPosition = localSpaceUIPosition;
                 displayHearts.Add(heart);
             }
 
@@ -61,6 +63,8 @@ namespace VRJammies.Framework.Core.Health
                 originalHeartPositions.Add(displayHearts[i].transform);
                 displayHearts[i].SetActive(true);
             }
+
+            originalHeart.SetActive(false);
         }
 
         //adjustment to health UI - can ingest positive or negative values to add or remove health
