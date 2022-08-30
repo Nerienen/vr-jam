@@ -290,6 +290,7 @@ MonoBehaviour:
   onChargeUp:
     m_PersistentCalls:
       m_Calls: []
+  animator: {fileID: 0}
   _target: {fileID: 0}
   _projectilePrefab: {fileID: 2324668574953617844, guid: 778ed487484557f4d8a80d4bd395793a, type: 3}
   _projectileList: []
@@ -2180,8 +2181,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2129386167996248938}
-  - component: {fileID: 456502453441943714}
-  - component: {fileID: 3640502806647457047}
   m_Layer: 7
   m_Name: Bone
   m_TagString: Untagged
@@ -2205,75 +2204,7 @@ Transform:
   - {fileID: 3302024570054400411}
   m_Father: {fileID: 3917382682001627713}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &456502453441943714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2812061067203539464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d5891dde9f915244920e29e6ba21caf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onChargeUp:
-    m_PersistentCalls:
-      m_Calls: []
-  _target: {fileID: 0}
-  _projectilePrefab: {fileID: 2146277150381384313, guid: 36b6ffdfbd9d36c47aa8f10bd4b2eb43, type: 3}
-  _projectileList: []
-  _output: {fileID: 4044986650129141899}
-  _force: 30
-  _isActive: 1
-  playerFinder: {fileID: 4850510839882492530}
-  _attackSpeed: 2
---- !u!114 &3640502806647457047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2812061067203539464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -1495100857
-      Data2: 1227599758
-      Data3: 1391710091
-      Data4: 970149756
-    Path: event:/sfx/3-boss-fight/sludge-cannon
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  m_LocalEulerAnglesHint: {x: 61.99044, y: -46.185326, z: -46.18532}
 --- !u!1 &2858029387860978658
 GameObject:
   m_ObjectHideFlags: 0
@@ -3781,6 +3712,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3917382682001627713}
+  - component: {fileID: 9051084576195374595}
   m_Layer: 7
   m_Name: Sludge
   m_TagString: Untagged
@@ -3803,7 +3735,27 @@ Transform:
   - {fileID: 2129386167996248938}
   m_Father: {fileID: 4179541970580017630}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -43.81468, y: 90, z: -89.99999}
+--- !u!95 &9051084576195374595
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4401853466285768955}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b43cdab1b736a6f45ac3202232ffd865, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4657505326420734350
 GameObject:
   m_ObjectHideFlags: 0
@@ -3834,8 +3786,7 @@ Transform:
   m_LocalPosition: {x: -0.013839737, y: 0.99977297, z: 0.05006226}
   m_LocalScale: {x: 0.16022065, y: 0.16022065, z: 0.16022067}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4148139982779344247}
+  m_Children: []
   m_Father: {fileID: 2129386167996248938}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4201,7 +4152,7 @@ MonoBehaviour:
   meleeAttacks:
   - {fileID: 9212530011624110636}
   rangedAttacks:
-  - {fileID: 456502453441943714}
+  - {fileID: 722387702185206623}
   - {fileID: 8402047569533741646}
   - {fileID: 8007981429540746016}
 --- !u!114 &1041854540643726823
@@ -4542,6 +4493,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3302024570054400411}
+  - component: {fileID: 722387702185206623}
+  - component: {fileID: 4738138731126714124}
   m_Layer: 7
   m_Name: Bone_end
   m_TagString: Untagged
@@ -4557,13 +4510,83 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5092940119875780245}
   m_LocalRotation: {x: 0.000000007450581, y: -0.0000000018626456, z: -0.0000000067520887, w: 1}
-  m_LocalPosition: {x: -0, y: 1.0000001, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4148139982779344247}
   m_Father: {fileID: 2129386167996248938}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &722387702185206623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5092940119875780245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5891dde9f915244920e29e6ba21caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onChargeUp:
+    m_PersistentCalls:
+      m_Calls: []
+  animator: {fileID: 9051084576195374595}
+  _target: {fileID: 0}
+  _projectilePrefab: {fileID: 2146277150381384313, guid: 36b6ffdfbd9d36c47aa8f10bd4b2eb43, type: 3}
+  _projectileList: []
+  _output: {fileID: 4044986650129141899}
+  _force: 30
+  _isActive: 1
+  playerFinder: {fileID: 4850510839882492530}
+  _attackSpeed: 2
+--- !u!114 &4738138731126714124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5092940119875780245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1495100857
+      Data2: 1227599758
+      Data3: 1391710091
+      Data4: 970149756
+    Path: event:/sfx/3-boss-fight/sludge-cannon
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5230112724106225870
 GameObject:
   m_ObjectHideFlags: 0
@@ -4803,15 +4826,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5952012447765511785}
-  m_LocalRotation: {x: -0.00000009872015, y: 0.000000006519255, z: -2.481407e-24, w: 1}
-  m_LocalPosition: {x: 2.5911674, y: -1.0587056, z: 3.320944}
-  m_LocalScale: {x: 1.0000005, y: 1.0000005, z: 1.0000005}
+  m_LocalRotation: {x: 0.33774814, y: 0.056269325, z: 0.8113244, w: -0.4738276}
+  m_LocalPosition: {x: -0.006, y: 0.008, z: 0.68}
+  m_LocalScale: {x: 0.16022074, y: 0.16022074, z: 0.16022076}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4044986650129141899}
-  m_Father: {fileID: 4151385295789356087}
+  m_Father: {fileID: 3302024570054400411}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -24.291, y: 32.873, z: -126.694}
 --- !u!33 &4792920687400488683
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15888,6 +15911,18 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9fe68517dc4ae524ca9f7eb5cd3c96f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8159555023042601495, guid: 9fe68517dc4ae524ca9f7eb5cd3c96f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.000003461835
+      objectReference: {fileID: 0}
+    - target: {fileID: -8159555023042601495, guid: 9fe68517dc4ae524ca9f7eb5cd3c96f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0.0000040456166
+      objectReference: {fileID: 0}
+    - target: {fileID: -8159555023042601495, guid: 9fe68517dc4ae524ca9f7eb5cd3c96f7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 85.781364
       objectReference: {fileID: 0}
     - target: {fileID: -7579103995338469470, guid: 9fe68517dc4ae524ca9f7eb5cd3c96f7, type: 3}
       propertyPath: m_Layer

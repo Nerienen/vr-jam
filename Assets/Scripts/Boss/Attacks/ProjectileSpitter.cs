@@ -6,6 +6,7 @@ namespace VRJammies.Framework.Core.Boss
 {
     public class ProjectileSpitter : AttackBase
     {
+        [SerializeField] private Animator animator;
         [SerializeField]
         private GameObject _target;
         [SerializeField]
@@ -18,6 +19,9 @@ namespace VRJammies.Framework.Core.Boss
         private float _force = 10;
         [SerializeField]
         private bool _isActive = false;
+
+        private static readonly int AttackState = Animator.StringToHash("Attack");
+        private static readonly int IsAttacking = Animator.StringToHash("IsAttacking");
 
         [SerializeField] private PlayerFinder playerFinder;
 
@@ -114,6 +118,7 @@ namespace VRJammies.Framework.Core.Boss
             rb.velocity = direction * _force;
             projectile.transform.parent = null;            
             onAttack.Invoke();
+            animator.SetBool(IsAttacking, false);
             OnDoneAttacking();
         }
 
@@ -124,6 +129,7 @@ namespace VRJammies.Framework.Core.Boss
 
         public override void Attack()
         {
+            animator.SetBool(IsAttacking, true);
             SpawnProjectile();
             _timer = 0;
         }
