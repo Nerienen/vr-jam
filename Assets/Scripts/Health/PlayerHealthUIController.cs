@@ -13,7 +13,7 @@ namespace VRJammies.Framework.Core.Health
 
         [SerializeField]
         private List<GameObject> displayHearts;
-        private List<Transform> originalHeartPositions;
+        private List<Vector3> originalHeartPositions;
 
         private Damageable _playerDamageable;
         private Player.Player _player;
@@ -24,7 +24,7 @@ namespace VRJammies.Framework.Core.Health
         // Start is called before the first frame update
         void Awake()
         {
-            originalHeartPositions = new List<Transform>();
+            originalHeartPositions = new List<Vector3>();
 
             //to cache for performance
             _waitForSeconds = new WaitForSeconds(heartDestroyDelayTime);
@@ -60,7 +60,7 @@ namespace VRJammies.Framework.Core.Health
 
             for (int i = 0; i < displayHearts.Count; i++)
             {
-                originalHeartPositions.Add(displayHearts[i].transform);
+                originalHeartPositions.Add(displayHearts[i].transform.localPosition);
                 displayHearts[i].SetActive(true);
             }
 
@@ -134,18 +134,19 @@ namespace VRJammies.Framework.Core.Health
             displayHearts[heartIndex].transform.parent = this.transform;
             displayHearts[heartIndex].GetComponent<BoxCollider>().enabled = false;
             displayHearts[heartIndex].GetComponent<Rigidbody>().useGravity = false;
-            displayHearts[heartIndex].transform.position = originalHeartPositions[heartIndex].transform.position;
+            displayHearts[heartIndex].transform.localPosition = originalHeartPositions[heartIndex];
+            displayHearts[heartIndex].transform.localRotation = originalHeart.transform.localRotation;
             displayHearts[heartIndex].SetActive(true);
         }
 
         private IEnumerator DelayedDeactivation(GameObject obj)
         {
-            if(obj != null)
+            yield return _waitForSeconds;
+
+            if (obj != null)
             {
                 obj.SetActive(false);
             }
-
-            yield return _waitForSeconds;
         }
 
         private void OnDestroy()
