@@ -96,11 +96,7 @@ namespace VRJammies.Framework.Core.Health
                     else if (heartMod < 0)
                     {
                         heartMod++;
-                        displayHearts[i].transform.parent = this.transform;
-                        displayHearts[i].GetComponent<BoxCollider>().enabled = false;
-                        displayHearts[i].GetComponent<Rigidbody>().useGravity = false;
-                        displayHearts[i].transform.position = originalHeartPositions[i].transform.position;
-                        displayHearts[i].SetActive(true);
+                        ResetHeart(i);
                     }
 
                     StartCoroutine(DelayedDeactivation(displayHearts[i]));
@@ -123,6 +119,23 @@ namespace VRJammies.Framework.Core.Health
             //or alternatively just check
             activeHearts.Any(); 
             */
+        }
+
+        public void ResetHearts()
+        {
+            for (int i = 0; i < displayHearts.Count; i++)
+            {
+                ResetHeart(i);
+            }
+        }
+
+        private void ResetHeart(int heartIndex)
+        {
+            displayHearts[heartIndex].transform.parent = this.transform;
+            displayHearts[heartIndex].GetComponent<BoxCollider>().enabled = false;
+            displayHearts[heartIndex].GetComponent<Rigidbody>().useGravity = false;
+            displayHearts[heartIndex].transform.position = originalHeartPositions[heartIndex].transform.position;
+            displayHearts[heartIndex].SetActive(true);
         }
 
         private IEnumerator DelayedDeactivation(GameObject obj)
