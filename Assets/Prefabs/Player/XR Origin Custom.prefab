@@ -3808,7 +3808,20 @@ MonoBehaviour:
         m_CallState: 2
   onPlayerDamaged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7962800380431543201}
+        m_TargetAssemblyTypeName: VRJammies.Framework.Core.Health.PlayerHealthUIController,
+          Assembly-CSharp
+        m_MethodName: UpdateHealthUI
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6401763131585759398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4193,6 +4206,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a9c700c76f5f624f9a8e82bd56d3e7e, type: 3}
+--- !u!114 &7962800380431543201 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5603438297245242586, guid: 9a9c700c76f5f624f9a8e82bd56d3e7e, type: 3}
+  m_PrefabInstance: {fileID: 2540845686835445627}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b108c7e74c41f4a807c21128d3767b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7962800380431543206 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5603438297245242589, guid: 9a9c700c76f5f624f9a8e82bd56d3e7e, type: 3}
