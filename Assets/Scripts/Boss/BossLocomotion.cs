@@ -186,7 +186,14 @@ namespace VRJammies.Framework.Core.Boss
         private void OnPlayerFound(Player.Player player)
         {
             SetTarget(player.transform.position);
-            if (boss.state is BehaviorState.Idle or BehaviorState.PlayerLost)
+            
+            // !!!
+            // Had to use the old C# syntax here to be compatible with Unity 2020.3. Old if query:
+            // if (boss.state is BehaviorState.Idle or BehaviorState.PlayerLost)
+            // TODO: Test if the behaviour is still working.
+            // !!!
+            
+            if (boss.state is BehaviorState.Idle || boss.state is BehaviorState.PlayerLost)
             {
                 boss.state = BehaviorState.PlayerFound;
             }

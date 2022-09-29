@@ -44,7 +44,14 @@ namespace VRJammies.Framework.Core.Health
         {
             int heartCount = _playerDamageable.GetStartingHealth();
             Renderer heartRend = originalHeart.GetComponent<Renderer>();
-            float heartWidth = heartRend.localBounds.size.z;
+            
+            // !!!
+            // Had to use the old C# syntax here to be compatible with Unity 2020.3. Old syntax:
+            // float heartWidth = heartRend.localBounds.size.z;
+            // TODO: Test if the behaviour is still working.
+            // !!!
+            
+            float heartWidth = heartRend.bounds.size.z;
 
             //instantiate new hearts based on existing starting health on dameagable
             for (int i = 0; i < heartCount; i++)
