@@ -116,6 +116,36 @@ namespace VRJammies.Framework.Core.Boss
             playerPos = player.transform.position;
         }
 
+        public void UpdateAttackList()
+        {
+            var attacksToRemove = new List<AttackBase>();
+            foreach (var attack in meleeAttacks)
+            {
+                if (attack == null || attack.enabled == false)
+                {
+                    attacksToRemove.Add(attack);
+                }
+            }
+            foreach (var attack in attacksToRemove)
+            {
+                meleeAttacks.Remove(attack);
+            }
+            
+            attacksToRemove.Clear();
+            foreach (var attack in rangedAttacks)
+            {
+                if (attack == null || attack.enabled == false)
+                {
+                    attacksToRemove.Add(attack);
+                }
+            }
+            foreach (var attack in attacksToRemove)
+            {
+                rangedAttacks.Remove(attack);
+            }
+            
+        }
+
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
