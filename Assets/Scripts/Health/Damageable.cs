@@ -14,6 +14,7 @@ namespace VRJammies.Framework.Core.Health
         private int _currentHealth = 0;
         [SerializeField]
         private int _startingHealth = 1;
+        [SerializeField] private bool shouldDamageHealth = true;
 
         private HealthController healthController;
 
@@ -140,7 +141,7 @@ namespace VRJammies.Framework.Core.Health
                 }
             }
 
-            // Substract the damage taken value from the current health
+            // Subtract the damage taken value from the current health
             _currentHealth -= damageTaken;
 
             if (damageTaken > 0 && damageDealer.ShouldDestroy())
@@ -158,7 +159,7 @@ namespace VRJammies.Framework.Core.Health
         {
             _currentHealth = 0;
             destroyed = true;
-            if(healthController) healthController.DealDamage(1);
+            if(shouldDamageHealth && healthController) healthController.DealDamage(1);
 
             // Invoke Callback Event
             if (onDestroyed != null)
