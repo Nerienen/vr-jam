@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Level/Junkyard Final.unity
     guid: 029dae6b226c18840a277aeb2b091168
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Other/Dev_ScriptableEvents/Dev_CarHangingCable.unity
     guid: e00c42922b943a84fba8f8fb1e8ba472
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Other/Dev_WeaponCrafting.unity
     guid: af83fe2227b103442b50ac8ccf3a5b61
   m_configObjects:

@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Cloud plane
+  m_Shader: {fileID: -6465566751694194690, guid: 0bba96732ab1d24409b87ab20b12005f, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_09593e22f8c64b0e956cad7e3f50570a: 1.16
+    - Vector1_34c04c34332a4bd3a489c8d4e68ef64b: -4.2
+    - Vector1_43df62a059ed456b8fbb6fddfe78a33d: 404.2
+    - Vector1_7ba24a0ccbaf476d8688ed47c338b86c: 65.4
+    - Vector1_fd4a731534ee46b49ac2ce0dea92a816: 2.3
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    m_Colors:
+    - Color_f91058624c4646c69324aa7b656c496e: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 0.5529412}
+    - Vector2_2d7027745d8b418dac92c0d08d801e34: {r: 0, g: 0.0028, b: 0, a: 0}
+    - Vector2_8ca171d2cee6472c8c02a55c355fcc54: {r: 0, g: 0.0035, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!114 &150223544702737726
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
