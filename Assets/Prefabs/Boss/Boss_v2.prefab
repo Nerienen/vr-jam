@@ -341,6 +341,7 @@ MonoBehaviour:
   limbRb: {fileID: 2462907923407446241}
   launchTransform: {fileID: 5672168273566239744}
   launchForce: 500
+  launchTorque: 100
   disappearInSeconds: 10
 --- !u!54 &2462907923407446241
 Rigidbody:
@@ -2579,6 +2580,7 @@ MonoBehaviour:
   limbRb: {fileID: 4864268951109510731}
   launchTransform: {fileID: 372022568414618654}
   launchForce: 500
+  launchTorque: 100
   disappearInSeconds: 10
 --- !u!54 &4864268951109510731
 Rigidbody:
@@ -11042,6 +11044,7 @@ MonoBehaviour:
   limbRb: {fileID: 8092739836820682613}
   launchTransform: {fileID: 1485629726398333579}
   launchForce: 300
+  launchTorque: 100
   disappearInSeconds: 10
 --- !u!1 &8402047571104391937
 GameObject:
