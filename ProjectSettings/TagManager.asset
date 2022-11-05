@@ -7,6 +7,10 @@ TagManager:
   - LeftHandUIAttach
   - LeftHand
   - SpawnZone
+  - CokeMonsterBottle
+  - Ground
+  - VoidDestroyer
+  - HandSinker
   layers:
   - Default
   - TransparentFX
