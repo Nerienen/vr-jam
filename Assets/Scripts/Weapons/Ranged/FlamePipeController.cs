@@ -67,7 +67,8 @@ public class FlamePipeController : MonoBehaviour
         if (_liquidTankScript && _liquidTankScript.CheckCurrentLiquid() > 0 && _projectilePrefab)
         {
             ShootProjectile(SpawnProjectile());
-            Explode();
+
+           // Explode();
         }
     }
 

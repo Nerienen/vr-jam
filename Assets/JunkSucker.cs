@@ -38,7 +38,7 @@ public class JunkSucker : MonoBehaviour
             gameObject.GetComponent<Rigidbody>().isKinematic = false;
         }
 
-        if (other.CompareTag("Ground"))
+        else if (other.CompareTag("Ground"))
         {
             Debug.Log("Fell on Ground");
             yield return new WaitForSeconds(3);
