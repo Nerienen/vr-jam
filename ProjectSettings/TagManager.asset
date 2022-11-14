@@ -11,6 +11,8 @@ TagManager:
   - Ground
   - VoidDestroyer
   - HandSinker
+  - Fireball
+  - Ice
   layers:
   - Default
   - TransparentFX
