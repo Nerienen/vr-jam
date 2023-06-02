@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Other/Dev_WeaponCrafting.unity
     guid: af83fe2227b103442b50ac8ccf3a5b61
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: e7c6c6eba6b38f342ae6cbac405a547e, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fde4fd115b6e442468bbc6cf15cfc32d, type: 2}

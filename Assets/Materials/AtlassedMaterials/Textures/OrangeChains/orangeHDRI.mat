@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: orangeHDRI
+  m_Shader: {fileID: -6465566751694194690, guid: d17daea7cb2730b4580756289bd66e61, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_50cfb15c36534f599da5a8dcbfe8893c: 0.4
+    - Vector1_fe88bd7196f84b3494610f96378365fb: 30
+    m_Colors:
+    - Color_2c0dd963f2d640fa9b06991483c2491b: {r: 0.4433962, g: 0.09452377, b: 0, a: 0}
+    - Color_83c169664fe9421eb8d517d4ba550729: {r: 0.90588236, g: 0.5337297, b: 0.23529409, a: 0}
+  m_BuildTextureStacks: []
