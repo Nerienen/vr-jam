@@ -1,9 +1,17 @@
-# [VR Game Jam 2022](https://itch.io/jam/vrjam2022) - Workingtitle here
+# [VR Game Jam 2022](https://itch.io/jam/vrjam2022) - CyberJunk VR
  
+
+##Itch.io page
+
+https://runningoncoffee.itch.io/cyberjunk-vr
+
+
+
+
 [![License Badge](https://img.shields.io/github/license/ItsHarfer/VR-Game-Jam-2022)](./LICENSE.md)
 
 by
-[VR Jammies](https://www.google.com/)' - short slogan here -
+[VR Jammies](https://www.google.com/)' - VR peeps in pyjamas -
 
 All Informations you need to know about the vr jam, look here: [VR Game Jam 2022](https://itch.io/jam/vrjam2022)
 
